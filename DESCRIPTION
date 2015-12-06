@@ -2,7 +2,7 @@ Package: cIRT
 Type: Package
 Title: Choice Item Response Theory
 Version: 1.0.0
-Date: 2015-07-10
+Date: 2015-12-05
 Authors@R: c(person("Steve", "Culpepper", role = c("aut", "cph"), email =
     "sculpepp@illinois.edu"), person("James", "Balamuta", role = c("aut",
     "cre", "ctb", "com","cph"),email = "balamut2@illinois.edu"))
