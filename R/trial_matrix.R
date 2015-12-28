@@ -36,6 +36,6 @@
 #'   \item{\code{t29}}{Subject's Response to Item 29.}
 #'   \item{\code{t30}}{Subject's Response to Item 30.}
 #' }
-#' @source Choice38 Experiment at UIUC during Spring 2014
+#' @source Choice38 Experiment at UIUC during Spring 2014 - Fall 2014
 #' @author Steven Culpepper and James Balamuta
 NULL

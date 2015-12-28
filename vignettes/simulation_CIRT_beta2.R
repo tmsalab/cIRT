@@ -1,4 +1,4 @@
-# Variables
+### Variables
 # Y = trial matix
 # C = KN vector of binary choices
 # N = #of subjects
@@ -63,7 +63,6 @@ for(b in 1:B){
   Xnotheta = cbind(1,center_pred)
   
   Xtheta = rep(thetatrue,each=K)*Xnotheta
-  #Xtheta = cbind(Xtheta,Xtheta*Xnotheta[,2])
   X = cbind(Xnotheta,Xtheta)
   
   
@@ -73,8 +72,6 @@ for(b in 1:B){
   etac = X%*%gamma + W_veczeta
   Zc = rnorm(N*K,mean=etac,sd=1)
   C = 1*(Zc>0)
-  
-  #    W_veczeta = as.matrix(W_veczeta)
   
   out1 = cIRT(subid, 
               Xnotheta,
@@ -90,7 +87,6 @@ for(b in 1:B){
   write.csv(out1$gs0, file=paste0("gs0_",b,".csv"))
   write.csv(out1$beta, file=paste0("beta_",b,".csv"))
   
-  # How to write array() to csv???
   sig = out1$Sigma_zeta_inv
   save(sig, file=paste0("sig_",b,".rda"))
   save(out1, file=paste0("data_",b,".rda"))
