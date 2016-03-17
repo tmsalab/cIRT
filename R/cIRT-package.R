@@ -9,7 +9,6 @@
 #' }
 #'
 #' @name cIRT_package
-#' @aliases cirt
 #' @docType package
 #' @title Item Response Theory Models with Guided Choice
 #' @seealso \code{\link{cIRT}}, \code{\link{TwoPLChoicemcmc}}, \code{\link{probitHLM}}, \code{\link{direct_sum}},  \code{\link{center_matrix}},

@@ -1,27 +1,39 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
 [![Travis-CI Build Status](https://travis-ci.org/tmsalab/cIRT.svg?branch=master)](https://travis-ci.org/tmsalab/cIRT)
 
-cIRT
-====
+# cIRT
 
 An R Package detailing the Choice Item Response Theory Model
 
-Install Instructions (All platforms)
-====================================
+# Install Instructions (All platforms)
 
 To install the `cIRT` package, there are two options: CRAN (stable) or GitHub (Developmental).
 
 The installation process with CRAN is the simplest
-
-``` r
+```r
 install.packages("cIRT")
 ```
 
 Prior to installing with `devtools`, please make sure to have a compiler installed on your system that is compatible with R.
 
-If you have a compiler already installed, then continue on by installing the package dependencies and finally the package itself by doing the following:
+If you have a compiler already installed, then continue on by installing the package dependencies and finally the package itself by doing the following: 
 
-``` r
+```r
 # Install dependencies
 install.packages("RcppArmadillo")
 
