@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Travis-CI Build Status](https://travis-ci.org/tmsalab/cIRT.svg?branch=master)](https://travis-ci.org/tmsalab/cIRT)
+[![Travis-CI Build Status](https://travis-ci.org/tmsalab/cIRT.svg?branch=master)](https://travis-ci.org/tmsalab/cIRT) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/cIRT)](http://cran.r-project.org/package=cIRT)
 
 # cIRT
 

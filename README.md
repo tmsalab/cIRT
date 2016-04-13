@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/tmsalab/cIRT.svg?branch=master)](https://travis-ci.org/tmsalab/cIRT)
+[![Travis-CI Build Status](https://travis-ci.org/tmsalab/cIRT.svg?branch=master)](https://travis-ci.org/tmsalab/cIRT) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/cIRT)](http://cran.r-project.org/package=cIRT)
 
 cIRT
 ====
