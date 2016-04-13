@@ -54,60 +54,62 @@ Builds a model using MCMC
 # Sig = random-effects variance-covariance
 # subid = id variable for subjects
 
+# Load the Package
 library(cIRT)
-# Simulate 2PNO Data
-N = 1000  # Students
-J = 20    # Total numbers of possible items per SA
 
-# Randomly pick a's and b's
-set.seed(1337)
-# Generate as, bs
-atrue=runif(J)+1
-btrue=2*runif(J)-1
-# 2 Level Probit Data
-K = 30
-gam_notheta = c(.5,1)
-gam_theta   = c(3,.25)
-gamma = c(gam_notheta,gam_theta)
-Sig = matrix(c(.25,0,0,.125),2,2)
+# Load the Data
+data(trial_matrix)
+data(choice_matrix)
+
+# Thurstone design matrices
+all_nopractice = subset(all_data_trials,experiment_loop.thisN>-1)
+hard_items = choice_matrix$hard_q_id
+easy_items = choice_matrix$easy_q_id
+
+D_easy = model.matrix(~-1+factor(easy_items))
+D_hard = -1*model.matrix(~-1+factor(hard_items))[,-c(5,10,15)]
     
-# True theta and etay
-thetatrue = rnorm(N)
-etay = outer(rep(1,N),atrue) * thetatrue - outer(rep(1,N),btrue)
-  
-# Generate Y for 2PNO model
-p.correct = pnorm(etay)
-Y = matrix(rbinom(N*J, 1, p.correct),N,J)
-
-#################################################
-# Simulating 2 level probit data
-#################################################
+# Defining effect-coded contrasts
+high_contrasts <- rbind(-1,diag(4))
+rownames(high_contrasts) = 12:16
+low_contrasts <- rbind(-1,diag(2))
+rownames(low_contrasts) = 4:6
     
-subid = expand.grid(cid = 1:K,sid = 1:N)[,2]
+# Creating high & low factors
+high = factor(choice_matrix[,'high_value'])
+low = factor(choice_matrix[,'low_value'])
+contrasts(high) = high_contrasts
+contrasts(low) = low_contrasts
 
-pred = rnorm(K*N,0,1) # Pred
-
-center_pred = center_matrix(as.matrix(pred))
-
-Xnotheta = cbind(1,center_pred)
+fixed_effects = model.matrix(~high+low)
+fixed_effects_base = fixed_effects[,1]
+fixed_effects_int = model.matrix(~high*low)
       
-Xtheta = rep(thetatrue,each=K)*Xnotheta
-
-X = cbind(Xnotheta,Xtheta)
-zetas = mvtnorm::rmvnorm(N,mean=c(0,0),sigma=Sig) # mvtnorm environment accessed
-W_veczeta = apply(Xnotheta*zetas[rep(1:N,each=K),],1,sum)
-etac = X\%*\%gamma + W_veczeta
-Zc = rnorm(N*K,mean=etac,sd=1)
-C = 1*(Zc>0)
-    
-out1 = cIRT(subid, 
-            Xnotheta,
-            c(1,2), 
-            Xnotheta,
-            Y, 
-            C, 
-            5000)
-}  
+      
+# Model with Thurstone D Matrix
+system.time({ 
+  out_model_thurstone = cIRT(choice_matrix[,'subject_id'], 
+                             cbind(fixed_effects[,-1],D_easy,D_hard),
+                             c(1:ncol(fixed_effects)), 
+                             as.matrix(fixed_effects),
+                             as.matrix(trial_matrix), 
+                             choice_matrix[,'choose_hard_q'],
+                                          20000,
+                                          25000)
+})
+      
+      
+vlabels_thurstone = colnames(cbind(fixed_effects[,-1],D_easy,D_hard))
+G_thurstone = t(apply(out_model_thurstone$gs0, 2, FUN = quantile,probs=c(.5,.025,.975)))
+rownames(G_thurstone)=vlabels_thurstone
+B_thurstone = t(apply(out_model_thurstone$beta, 2, FUN = quantile,probs=c(.5,0.025,.975)))
+rownames(B_thurstone)=colnames(fixed_effects)
+S_thurstone = solve(apply(out_model_thurstone$Sigma_zeta_inv, c(1,2), FUN = mean))
+inv_sd = diag(1/sqrt(diag(solve(apply(out_model_thurstone$Sigma_zeta_inv, c(1,2), FUN = mean)))))
+inv_sd\%*\%S_thurstone\%*\%inv_sd
+apply(out_model_thurstone$as, 2, FUN = mean)
+apply(out_model_thurstone$bs, 2, FUN = mean)
+}
 }
 \author{
 Steven Culpepper, James J Balamuta

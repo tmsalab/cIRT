@@ -3,8 +3,8 @@
 #' \tabular{ll}{
 #' Package: \tab cIRT\cr
 #' Type: \tab Package\cr
-#' Version: \tab 1.1.0\cr
-#' Date: \tab 2015-12-28\cr
+#' Version: \tab 1.2.0\cr
+#' Date: \tab 2016-04-12\cr
 #' License: \tab GPL-3\cr
 #' }
 #'
