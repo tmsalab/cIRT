@@ -1,21 +1,17 @@
 #include <RcppArmadillo.h>
 #include "armadillo_manipulations.h"
-using namespace Rcpp;
 
-
-//' @title Direct Sum of Matrices
+//' Direct Sum of Matrices
 //' 
-//' @description Computes the direct sum of all matrices passed in via the list.
-//' 
+//' Computes the direct sum of all matrices passed in via the list.
 //' @details
 //' Consider matrix A (mxn) and B (k x p).
 //' A direct sum is a diagonal matrix A (+) B with dimensions (m + k) x (n + p).
-//' 
 //' @param x list containing matrices
 //' @return ds_matrix matrix containing the direct sum in list.
 //' @author James J Balamuta
+//' @export
 //' @examples
-//' 
 //' x = list(matrix(0,nrow=5,ncol=3),
 //'          matrix(1,nrow=5,ncol=3))
 //' direct_sum(x)
@@ -65,14 +61,17 @@ arma::mat direct_sum(arma::field<arma::mat> x) {
   return ds_matrix;
 }
 
-//' @title Center a Matrix
-//' @description Obtains the mean of each column of the matrix and subtracts it from the given matrix in a centering operation.
+//' Center a Matrix
+//' 
+//' Obtains the mean of each column of the matrix and subtracts it from the
+//' given matrix in a centering operation.
 //' @param x A \code{matrix} with any dimensions
 //' @return centered_matrix A \code{matrix} with the same dimensions of X that has been centered.
 //' @details The application of this function to a matrix mimics the use of a centering matrix
 //'  given by: \eqn{{C_n} = {I_n} - \frac{1}{n}{11^T}}
 //' @seealso \code{\link{cIRT}}
 //' @author James J Balamuta
+//' @export
 //' @examples 
 //' nobs = 500
 //' nvars = 20

@@ -2,13 +2,11 @@
 #include "rgens.h"
 #include "total_cpp.h"
 #include "armadillo_manipulations.h"
-// [[Rcpp::depends(RcppArmadillo)]]
-
-using namespace Rcpp;
 
 
-//' @title Two Parameter Choice IRT Model MCMC
-//' @description Performs an MCMC routine for a two parameter IRT Model using Choice Data 
+//' Two Parameter Choice IRT Model MCMC
+//' 
+//' Performs an MCMC routine for a two parameter IRT Model using Choice Data 
 //' @param unique_subject_ids A \code{vector} with length N x 1 containing unique subject IDs.
 //' @param subject_ids A \code{vector} with length N*K x 1 containing subject IDs.
 //' @param choices_nk A \code{vector} with length N*K x 1 containing subject choices.
@@ -35,6 +33,7 @@ using namespace Rcpp;
 //' }
 //' @seealso \code{\link{cIRT}}, \code{\link{rmvnorm}}, and \code{\link{riwishart}}
 //' @author Steven Culpepper and James J Balamuta
+//' @export
 //' @examples \dontrun{
 //' #Call with the following data:
 //' TwoPLChoicemcmc(cogDAT,theta0,a0,b0,mu_xi0,Sig_xi0)
@@ -276,8 +275,9 @@ const arma::vec& mu_xi0, const arma::mat& Sig_xi0){
 
 
 
-//' @title Probit Hierarchial Level Model
-//' @description Performs modeling procedure for a Probit Hierarchial Level Model. 
+//' Probit Hierarchial Level Model
+//' 
+//' Performs modeling procedure for a Probit Hierarchial Level Model. 
 //' @param unique_subject_ids A \code{vector} with length N x 1 containing unique subject IDs.
 //' @param subject_ids A \code{vector} with length N*K x 1 containing subject IDs.
 //' @param choices_nk A \code{vector} with length N*K x 1 containing subject choices.
@@ -309,6 +309,7 @@ const arma::vec& mu_xi0, const arma::mat& Sig_xi0){
 //'   \item{\code{beta_1}}{A \code{vector} of length V}
 //'   \item{\code{B}}{A \code{matrix} of length V}
 //' }
+//' @export
 // [[Rcpp::export]]
 Rcpp::List probitHLM(const arma::vec& unique_subject_ids, 
                      const arma::vec& subject_ids, 
@@ -431,8 +432,9 @@ Rcpp::List probitHLM(const arma::vec& unique_subject_ids,
 }
 
 
-//' @title Generic Implementation of Choice IRT MCMC
-//' @description Builds a model using MCMC 
+//' Generic Implementation of Choice IRT MCMC
+//' 
+//' Builds a model using MCMC 
 //' @param subject_ids A \code{vector} that contains subject IDs for each line of data in the choice vector 
 //' (e.g. For 1 subject that made 5 choices, we would have the number 1 appear five times consecutively.)
 //' @param fixed_effects A \code{matrix} with NK x P1 dimensions that acts as the design matrix for terms WITHOUT theta.
@@ -453,6 +455,7 @@ Rcpp::List probitHLM(const arma::vec& unique_subject_ids,
 //' }
 //' @seealso \code{\link{TwoPLChoicemcmc}}, \code{\link{probitHLM}}, \code{\link{center_matrix}}, \code{\link{rmvnorm}}, \code{\link{rwishart}}, and \code{\link{riwishart}}
 //' @author Steven Culpepper, James J Balamuta
+//' @export
 //' @examples \dontrun{
 //' # Variables
 //' # Y = trial matix
@@ -645,9 +648,9 @@ Rcpp::List cIRT(arma::vec subject_ids,
   trial_matrix, theta0, ai0, bi0, mu_xi0, Sig_xi0);
     //Y, theta0, a0, b0, mu_xi0, Sig_xi0
     
-    ai0    = as<arma::mat>(outit[0]); // ai1
-    bi0    = as<arma::mat>(outit[1]); // bi1
-    theta0	= as<arma::vec>(outit[2]); // theta1
+    ai0    = Rcpp::as<arma::mat>(outit[0]); // ai1
+    bi0    = Rcpp::as<arma::mat>(outit[1]); // bi1
+    theta0	= Rcpp::as<arma::vec>(outit[2]); // theta1
     
     
     //  Rcpp::Rcout << "Theta Mean:" << mean(theta0) << " - var: " <<  var(theta0) << std::endl;
@@ -655,8 +658,8 @@ Rcpp::List cIRT(arma::vec subject_ids,
     //    mu_xi0	= as<arma::vec>(outit[3]); // mu_xi1
     //    Sig_xi0	= as<arma::mat>(outit[4]); // Sig_xi1
     // New Add
-    arma::vec Z_c = as<arma::vec>(outit[3]);
-    arma::vec Wzeta_0 = as<arma::vec>(outit[4]);
+    arma::vec Z_c = Rcpp::as<arma::vec>(outit[3]);
+    arma::vec Wzeta_0 = Rcpp::as<arma::vec>(outit[4]);
     
     //Rcpp::Rcout << "Building Design Matrix: " << i << std::endl;
     
@@ -701,15 +704,15 @@ Rcpp::List cIRT(arma::vec subject_ids,
     sigma_beta_inv);
     
     // Bs0
-    zeta_rv	= as<arma::mat>(outchit[0]);
-    Sigma_zeta_inv  = as<arma::mat>(outchit[1]);
+    zeta_rv	= Rcpp::as<arma::mat>(outchit[0]);
+    Sigma_zeta_inv  = Rcpp::as<arma::mat>(outchit[1]);
     
     // gs0
-    gamma	= as<arma::vec>(outchit[2]);
+    gamma	= Rcpp::as<arma::vec>(outchit[2]);
     
     // beta
-    beta  = as<arma::vec>(outchit[3]);
-    B  = as<arma::vec>(outchit[4]);
+    beta  = Rcpp::as<arma::vec>(outchit[3]);
+    B  = Rcpp::as<arma::vec>(outchit[4]);
     
     //Rcpp::Rcout << "probitHLM Success!" << std::endl;
     
@@ -739,9 +742,9 @@ Rcpp::List cIRT(arma::vec subject_ids,
                                           subject_ids,
                                           unique_subject_ids);
       
-      nC.col(i-burnit)  = as<arma::vec>(pppdat[0]);
-      nY.col(i-burnit)  = as<arma::vec>(pppdat[1]);
-      Cs.col(i-burnit)  = as<arma::vec>(pppdat[2]);
+      nC.col(i-burnit)  = Rcpp::as<arma::vec>(pppdat[0]);
+      nY.col(i-burnit)  = Rcpp::as<arma::vec>(pppdat[1]);
+      Cs.col(i-burnit)  = Rcpp::as<arma::vec>(pppdat[2]);
       
     }
   }

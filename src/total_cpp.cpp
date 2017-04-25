@@ -1,15 +1,16 @@
 #include <RcppArmadillo.h>
 #include "total_cpp.h"
-// [[Rcpp::depends(RcppArmadillo)]]
-using namespace Rcpp;
 
-//' @title Calculate Tabulated Total Scores 
-//' @description Internal function to -2LL
+
+//' Calculate Tabulated Total Scores 
+//' 
+//' Internal function to -2LL
 //' @param N An \code{int}, which gives the number of observations.  (> 0)
 //' @param J An \code{int}, which gives the number of items.  (> 0)
 //' @param Y A N by J \code{matrix} of item responses.
 //' @return A vector of tabulated total scores.
 //' @author Steven Andrew Culpepper
+//' @export
 // [[Rcpp::export]]
 arma::uvec Total_Tabulate(unsigned int N,unsigned int J,const arma::mat Y){  
   arma::vec T(N);
@@ -18,8 +19,9 @@ arma::uvec Total_Tabulate(unsigned int N,unsigned int J,const arma::mat Y){
   return H;
 }
 
-//' @title Generate Observed Data from choice model
-//' @description Generates observed cognitive and choice data from the IRT-Thurstone model. 
+//' Generate Observed Data from choice model
+//' 
+//' Generates observed cognitive and choice data from the IRT-Thurstone model. 
 //' @param N An \code{integer} for the number of observations.
 //' @param J An \code{integer} for the number of items.
 //' @param K An \code{integer} for the number of paired comparisons.
@@ -38,6 +40,7 @@ arma::uvec Total_Tabulate(unsigned int N,unsigned int J,const arma::mat Y){
 //'   \item{\code{C}}{A \code{vector} of length NK}
 //' }
 //' @author Steven Culpepper and James J Balamuta
+//' @export
 // [[Rcpp::export]]
 Rcpp::List Generate_Choice(
     unsigned int N,

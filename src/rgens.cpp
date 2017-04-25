@@ -1,9 +1,9 @@
 #include <RcppArmadillo.h>
 #include "rgens.h"
-using namespace Rcpp;
 
-//' @title Generate Random Multivariate Normal Distribution
-//' @description Creates a random Multivariate Normal when given number of obs, mean, and sigma. 
+//' Generate Random Multivariate Normal Distribution
+//' 
+//' Creates a random Multivariate Normal when given number of obs, mean, and sigma. 
 //' @param n An \code{int}, which gives the number of observations.  (> 0)
 //' @param mu A \code{vector} length m that represents the means of the normals.
 //' @param S A \code{matrix} with dimensions m x m that provides Sigma, the covariance matrix. 
@@ -13,7 +13,7 @@ using namespace Rcpp;
 //' @examples 
 //' #Call with the following data:
 //' rmvnorm(2, c(0,0), diag(2))
-//' 
+//' @export
 // [[Rcpp::export]]
 arma::mat rmvnorm(unsigned int n, const arma::vec& mu, const arma::mat& S){
   unsigned int ncols = S.n_cols;
@@ -22,13 +22,15 @@ arma::mat rmvnorm(unsigned int n, const arma::vec& mu, const arma::mat& S){
   return arma::repmat(mu, 1, n).t() + Y * arma::chol(S);
 }
 
-//' @title Generate Random Wishart Distribution
-//' @description Creates a random wishart distribution when given degrees of freedom and a sigma matrix. 
+//' Generate Random Wishart Distribution
+//' 
+//' Creates a random wishart distribution when given degrees of freedom and a sigma matrix. 
 //' @param df An \code{int}, which gives the degrees of freedom of the Wishart.  (> 0)
 //' @param S A \code{matrix} with dimensions m x m that provides Sigma, the covariance matrix. 
 //' @return A \code{matrix} that is a Wishart distribution, aka the sample covariance matrix of a Multivariate Normal Distribution
 //' @seealso \code{\link{riwishart}} and \code{\link{probitHLM}}
 //' @author James J Balamuta
+//' @export
 //' @examples 
 //' #Call with the following data:
 //' rwishart(3, diag(2))
@@ -45,7 +47,6 @@ arma::mat rmvnorm(unsigned int n, const arma::vec& mu, const arma::mat& S){
 //' Va = 20*(S^2 + tcrossprod(diag(S)))
 //' vR = apply(o, 1:2, var)
 //' stopifnot(all.equal(vR, Va, tolerance = 1/16))
-//' 
 // [[Rcpp::export]]
 arma::mat rwishart(unsigned int df, const arma::mat& S){
   // Dimension of returned wishart
@@ -77,13 +78,15 @@ arma::mat rwishart(unsigned int df, const arma::mat& S){
 }
 
 
-//' @title Generate Random Inverse Wishart Distribution
-//' @description Creates a random inverse wishart distribution when given degrees of freedom and a sigma matrix. 
+//' Generate Random Inverse Wishart Distribution
+//' 
+//' Creates a random inverse wishart distribution when given degrees of freedom and a sigma matrix. 
 //' @param df An \code{int} that represents the degrees of freedom.  (> 0)
 //' @param S A \code{matrix} with dimensions m x m that provides Sigma, the covariance matrix. 
 //' @return A \code{matrix} that is an inverse wishart distribution.
 //' @seealso \code{\link{rwishart}} and \code{\link{TwoPLChoicemcmc}}
 //' @author James J Balamuta
+//' @export
 //' @examples 
 //' #Call with the following data:
 //' riwishart(3, diag(2))

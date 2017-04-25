@@ -1,17 +1,22 @@
 Package: cIRT
 Type: Package
 Title: Choice Item Response Theory
-Version: 1.2.0
-Date: 2016-04-12
+Version: 1.2.1
+Date: 2017-04-25
 Authors@R: c(person("Steve", "Culpepper", role = c("aut", "cph"), email =
     "sculpepp@illinois.edu"), person("James", "Balamuta", role = c("aut",
     "cre", "ctb", "com","cph"),email = "balamut2@illinois.edu"))
-Description: Jointly model the accuracy of cognitive responses and item choices within a bayesian hierarchical framework as described by Culpepper and Balamuta (2015) <doi:10.1007/s11336-015-9484-7>. In addition, the package contains the datasets used within the analysis of the paper.
+Description: Jointly model the accuracy of cognitive responses and item choices
+    within a bayesian hierarchical framework as described by Culpepper and
+    Balamuta (2015) <doi:10.1007/s11336-015-9484-7>. In addition, the package
+    contains the datasets used within the analysis of the paper.
 License: GPL-3
+URL: https://github.com/tmsalab/cIRT
+BugReports: https://github.com/tmsalab/cIRT/issues
 Imports:
     Rcpp (>= 0.12.4)
 LinkingTo: Rcpp, RcppArmadillo
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
