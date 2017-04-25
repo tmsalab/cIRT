@@ -111,10 +111,9 @@ apply(out_model_thurstone$as, 2, FUN = mean)
 apply(out_model_thurstone$bs, 2, FUN = mean)
 }
 }
-\author{
-Steven Culpepper, James J Balamuta
-}
 \seealso{
 \code{\link{TwoPLChoicemcmc}}, \code{\link{probitHLM}}, \code{\link{center_matrix}}, \code{\link{rmvnorm}}, \code{\link{rwishart}}, and \code{\link{riwishart}}
 }
-
+\author{
+Steven Culpepper, James J Balamuta
+}

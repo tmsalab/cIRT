@@ -1,3 +1,8 @@
+# cIRT 1.2.1
+
+* Added `src/init.c` for R 3.4 compatibility
+* Added GitHub project page link
+
 # cIRT 1.2.0
 
 * Added two vignettes that cover the model estimation and simulation results in the package. 

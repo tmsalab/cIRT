@@ -26,4 +26,3 @@ This data set contains the subject's choices and point values for the difficult 
 \author{
 Steven Culpepper and James Balamuta
 }
-

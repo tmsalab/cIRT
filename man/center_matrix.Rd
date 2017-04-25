@@ -13,7 +13,8 @@ center_matrix(x)
 centered_matrix A \code{matrix} with the same dimensions of X that has been centered.
 }
 \description{
-Obtains the mean of each column of the matrix and subtracts it from the given matrix in a centering operation.
+Obtains the mean of each column of the matrix and subtracts it from the
+given matrix in a centering operation.
 }
 \details{
 The application of this function to a matrix mimics the use of a centering matrix
@@ -26,10 +27,9 @@ x = matrix(rnorm(nobs*nvars),nrow=nobs,ncol=nvars)
 r_centered = scale(x)
 arma_centered1 = center_matrix(x)
 }
-\author{
-James J Balamuta
-}
 \seealso{
 \code{\link{cIRT}}
 }
-
+\author{
+James J Balamuta
+}

@@ -45,4 +45,3 @@ Generates observed cognitive and choice data from the IRT-Thurstone model.
 \author{
 Steven Culpepper and James J Balamuta
 }
-

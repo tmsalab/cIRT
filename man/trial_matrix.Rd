@@ -49,4 +49,3 @@ This data set contains the subject's responses to items. Correct answers are den
 \author{
 Steven Culpepper and James Balamuta
 }
-

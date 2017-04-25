@@ -22,12 +22,10 @@ Creates a random Multivariate Normal when given number of obs, mean, and sigma.
 \examples{
 #Call with the following data:
 rmvnorm(2, c(0,0), diag(2))
-
-}
-\author{
-James J Balamuta
 }
 \seealso{
 \code{\link{TwoPLChoicemcmc}} and \code{\link{probitHLM}}
 }
-
+\author{
+James J Balamuta
+}

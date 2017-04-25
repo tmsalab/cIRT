@@ -60,10 +60,9 @@ Performs an MCMC routine for a two parameter IRT Model using Choice Data
 TwoPLChoicemcmc(cogDAT,theta0,a0,b0,mu_xi0,Sig_xi0)
 }
 }
-\author{
-Steven Culpepper and James J Balamuta
-}
 \seealso{
 \code{\link{cIRT}}, \code{\link{rmvnorm}}, and \code{\link{riwishart}}
 }
-
+\author{
+Steven Culpepper and James J Balamuta
+}

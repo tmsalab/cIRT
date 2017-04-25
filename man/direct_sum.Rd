@@ -20,7 +20,6 @@ Consider matrix A (mxn) and B (k x p).
 A direct sum is a diagonal matrix A (+) B with dimensions (m + k) x (n + p).
 }
 \examples{
-
 x = list(matrix(0,nrow=5,ncol=3),
          matrix(1,nrow=5,ncol=3))
 direct_sum(x)
@@ -33,4 +32,3 @@ direct_sum(x)
 \author{
 James J Balamuta
 }
-

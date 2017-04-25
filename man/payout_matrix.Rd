@@ -22,4 +22,3 @@ This data set contains the payout information for each subject.
 \author{
 Steven Culpepper and James Balamuta
 }
-

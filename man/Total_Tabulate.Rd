@@ -22,4 +22,3 @@ Internal function to -2LL
 \author{
 Steven Andrew Culpepper
 }
-

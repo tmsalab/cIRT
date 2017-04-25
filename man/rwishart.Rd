@@ -33,12 +33,10 @@ mR = apply(o, 1:2, mean)
 Va = 20*(S^2 + tcrossprod(diag(S)))
 vR = apply(o, 1:2, var)
 stopifnot(all.equal(vR, Va, tolerance = 1/16))
-
-}
-\author{
-James J Balamuta
 }
 \seealso{
 \code{\link{riwishart}} and \code{\link{probitHLM}}
 }
-
+\author{
+James J Balamuta
+}

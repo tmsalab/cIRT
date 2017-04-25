@@ -26,4 +26,3 @@ This data set contains the subject's responses survey questions administered usi
 \author{
 Steven Culpepper and James Balamuta
 }
-

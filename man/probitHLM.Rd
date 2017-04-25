@@ -66,10 +66,9 @@ Performs modeling procedure for a Probit Hierarchial Level Model.
 \details{
 The function is implemented to decrease the amount of vectorizations necessary.
 }
-\author{
-Steven A Culpepper, James J Balamuta
-}
 \seealso{
 \code{\link{rwishart}} and \code{\link{TwoPLChoicemcmc}}
 }
-
+\author{
+Steven A Culpepper, James J Balamuta
+}
