@@ -7,25 +7,27 @@
 rmvnorm(n, mu, S)
 }
 \arguments{
-\item{n}{An \code{int}, which gives the number of observations.  (> 0)}
+\item{n}{An \code{integer}, which gives the number of observations.  (> 0)}
 
 \item{mu}{A \code{vector} length m that represents the means of the normals.}
 
-\item{S}{A \code{matrix} with dimensions m x m that provides Sigma, the covariance matrix.}
+\item{S}{A \code{matrix} with dimensions m x m that provides Sigma,
+the covariance matrix.}
 }
 \value{
-A \code{matrix} that is a Multivariate Normal distribution
+A \code{matrix} that is a Multivariate Normal distribution.
 }
 \description{
-Creates a random Multivariate Normal when given number of obs, mean, and sigma.
+Creates a random Multivariate Normal when given number of obs, mean,
+and sigma.
 }
 \examples{
-#Call with the following data:
+# Call with the following data: 
 rmvnorm(2, c(0,0), diag(2))
 }
 \seealso{
-\code{\link{TwoPLChoicemcmc}} and \code{\link{probitHLM}}
+\code{\link[=TwoPLChoicemcmc]{TwoPLChoicemcmc()}} and \code{\link[=probitHLM]{probitHLM()}}
 }
 \author{
-James J Balamuta
+James Joseph Balamuta
 }

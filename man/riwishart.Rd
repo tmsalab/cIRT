@@ -7,23 +7,25 @@
 riwishart(df, S)
 }
 \arguments{
-\item{df}{An \code{int} that represents the degrees of freedom.  (> 0)}
+\item{df}{An \code{integer} that represents the degrees of freedom. (> 0)}
 
-\item{S}{A \code{matrix} with dimensions m x m that provides Sigma, the covariance matrix.}
+\item{S}{A \code{matrix} with dimensions m x m that provides Sigma,
+the covariance matrix.}
 }
 \value{
 A \code{matrix} that is an inverse wishart distribution.
 }
 \description{
-Creates a random inverse wishart distribution when given degrees of freedom and a sigma matrix.
+Creates a random inverse wishart distribution when given
+degrees of freedom and a sigma matrix.
 }
 \examples{
 #Call with the following data:
 riwishart(3, diag(2))
 }
 \seealso{
-\code{\link{rwishart}} and \code{\link{TwoPLChoicemcmc}}
+\code{\link[=rwishart]{rwishart()}} and \code{\link[=TwoPLChoicemcmc]{TwoPLChoicemcmc()}}
 }
 \author{
-James J Balamuta
+James Joseph Balamuta
 }

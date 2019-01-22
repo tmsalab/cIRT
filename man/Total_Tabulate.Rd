@@ -7,9 +7,9 @@
 Total_Tabulate(N, J, Y)
 }
 \arguments{
-\item{N}{An \code{int}, which gives the number of observations.  (> 0)}
+\item{N}{An \code{integer}, which gives the number of observations.  (> 0)}
 
-\item{J}{An \code{int}, which gives the number of items.  (> 0)}
+\item{J}{An \code{integer}, which gives the number of items.  (> 0)}
 
 \item{Y}{A N by J \code{matrix} of item responses.}
 }
