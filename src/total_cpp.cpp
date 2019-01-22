@@ -1,5 +1,5 @@
-#include "total_cpp.h"
 #include <RcppArmadillo.h>
+#include "total_cpp.h"
 
 //' Calculate Tabulated Total Scores
 //'

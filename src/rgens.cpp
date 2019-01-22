@@ -1,5 +1,5 @@
-#include "rgens.h"
 #include <RcppArmadillo.h>
+#include "rgens.h"
 
 //' Generate Random Multivariate Normal Distribution
 //'

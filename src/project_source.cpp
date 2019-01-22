@@ -1,7 +1,7 @@
+#include <RcppArmadillo.h>
 #include "armadillo_manipulations.h"
 #include "rgens.h"
 #include "total_cpp.h"
-#include <RcppArmadillo.h>
 
 //' Two Parameter Choice IRT Model MCMC
 //'

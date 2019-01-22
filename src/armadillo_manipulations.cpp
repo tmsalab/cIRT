@@ -1,5 +1,5 @@
-#include "armadillo_manipulations.h"
 #include <RcppArmadillo.h>
+#include "armadillo_manipulations.h"
 
 //' Direct Sum of Matrices
 //'
