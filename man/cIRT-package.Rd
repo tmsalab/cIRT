@@ -20,11 +20,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} [contributor, compiler, copyright holder]
+\strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} (0000-0003-2826-8458) [copyright holder]
 
 Authors:
 \itemize{
-  \item Steve Culpepper \email{sculpepp@illinois.edu} [copyright holder]
+  \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} (0000-0003-4226-6176) [copyright holder]
 }
 
 }
