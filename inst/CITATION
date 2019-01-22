@@ -1,4 +1,15 @@
-citHeader("To cite cIRT in publications use:")
+citHeader("To cite the 'cIRT' R package and methodology in publications use:")
+
+citEntry(entry = "Manual",
+         title        = "{cIRT: Choice Item Response Theory}",
+         author       = personList(as.person("Steven Andrew Culpepper"),
+                                   as.person("James Balamuta")
+                                  ),
+         year         = 2015,
+         textVersion  = paste("Culpepper, S.A. and Balamuta, J.J (2015)",
+                              "cIRT: Choice Item Response Theory.",
+                              "URL https://cran.r-project.org/package=cIRT.")
+)
 
 citEntry(entry = "Article",
   key          = "2015culpepper",
