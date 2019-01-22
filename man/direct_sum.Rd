@@ -7,28 +7,30 @@
 direct_sum(x)
 }
 \arguments{
-\item{x}{list containing matrices}
+\item{x}{A \code{field<matrix>} or \code{list} containing matrices}
 }
 \value{
-ds_matrix matrix containing the direct sum in list.
+Matrix containing the direct sum of all matrices in the list.
 }
 \description{
 Computes the direct sum of all matrices passed in via the list.
 }
 \details{
-Consider matrix A (mxn) and B (k x p).
-A direct sum is a diagonal matrix A (+) B with dimensions (m + k) x (n + p).
+Consider matrix \eqn{A} (\eqn{M \times N}{M x N}) and
+\eqn{B} (\eqn{K \times P}{k x p}). A direct sum is a diagonal matrix
+\eqn{A (+) B} with dimensions \eqn{(m + k) x (n + p)}.
 }
 \examples{
-x = list(matrix(0,nrow=5,ncol=3),
-         matrix(1,nrow=5,ncol=3))
+
+x = list(matrix(0, nrow = 5, ncol = 3),
+         matrix(1, nrow = 5, ncol = 3))
 direct_sum(x)
 
-x = list(matrix(rnorm(15),nrow=5,ncol=3),
-         matrix(rnorm(30),nrow=5,ncol=6),
-         matrix(rnorm(18),nrow=2,ncol=9))
+x = list(matrix(rnorm(15), nrow = 5, ncol = 3),
+         matrix(rnorm(30), nrow = 5, ncol = 6),
+         matrix(rnorm(18), nrow = 2, ncol = 9))
 direct_sum(x)
 }
 \author{
-James J Balamuta
+James Joseph Balamuta
 }

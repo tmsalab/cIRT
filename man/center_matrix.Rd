@@ -10,26 +10,28 @@ center_matrix(x)
 \item{x}{A \code{matrix} with any dimensions}
 }
 \value{
-centered_matrix A \code{matrix} with the same dimensions of X that has been centered.
+A \code{matrix} with the same dimensions of X that has been centered.
 }
 \description{
 Obtains the mean of each column of the matrix and subtracts it from the
 given matrix in a centering operation.
 }
 \details{
-The application of this function to a matrix mimics the use of a centering matrix
-given by: \eqn{{C_n} = {I_n} - \frac{1}{n}{11^T}}
+The application of this function to a matrix mimics the use of a
+centering matrix given by:
+
+\deqn{{C_n} = {I_n} - \frac{1}{n}{11^T}}
 }
 \examples{
 nobs = 500
 nvars = 20
-x = matrix(rnorm(nobs*nvars),nrow=nobs,ncol=nvars)
-r_centered = scale(x)
+x = matrix(rnorm(nobs * nvars), nrow = nobs, ncol = nvars) 
+r_centered = scale(x) 
 arma_centered1 = center_matrix(x)
 }
 \seealso{
-\code{\link{cIRT}}
+\code{\link[=cIRT]{cIRT()}}
 }
 \author{
-James J Balamuta
+James Joseph Balamuta
 }

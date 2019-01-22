@@ -16,24 +16,31 @@ Generate_Choice(N, J, K, theta, as, bs, zeta, gamma, X, W, subject_ids,
 
 \item{theta}{A \code{vector} of latent cognitive variables.}
 
-\item{as}{item discriminations, a \code{vector} of length J}
+\item{as}{A \code{vector} of length J with item discriminations.}
 
-\item{bs}{item locations, a \code{vector} of length J}
+\item{bs}{A \code{vector} of length J with item locations.}
 
-\item{zeta}{A \code{matrix} with dimensions N x V containing random parameter estimates.}
+\item{zeta}{A \code{matrix} with dimensions N x V containing
+random parameter estimates.}
 
-\item{gamma}{A \code{vector} with dimensions P x 1 containing fixed parameter estimates, where \eqn{P = P_1 + P_2}}
+\item{gamma}{A \code{vector} with dimensions P x 1 containing
+fixed parameter estimates, where \eqn{P = P_1 + P_2}}
 
-\item{X}{A \code{matrix} with dimensions N*K x P_1 containing fixed effect design matrix without theta.}
+\item{X}{A \code{matrix} with dimensions N*K x P_1 containing
+fixed effect design matrix without theta.}
 
-\item{W}{A \code{matrix} with dimensions N*K x V containing random effect variables.}
+\item{W}{A \code{matrix} with dimensions N*K x V containing
+random effect variables.}
 
-\item{subject_ids}{A \code{vector} with length NK x 1 containing subject-choice IDs.}
+\item{subject_ids}{A \code{vector} with length NK x 1 containing
+subject-choice IDs.}
 
-\item{unique_subject_ids}{A \code{vector} with length N x 1 containing unique subject IDs.}
+\item{unique_subject_ids}{A \code{vector} with length N x 1 containing
+unique subject IDs.}
 }
 \value{
 A \code{list} that contains:
+
 \describe{
 \item{\code{Y}}{A \code{matrix} of dimension N by J}
 \item{\code{C}}{A \code{vector} of length NK}
@@ -43,5 +50,5 @@ A \code{list} that contains:
 Generates observed cognitive and choice data from the IRT-Thurstone model.
 }
 \author{
-Steven Culpepper and James J Balamuta
+Steven Andrew Culpepper and James Joseph Balamuta
 }

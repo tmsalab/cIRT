@@ -7,18 +7,22 @@
 rwishart(df, S)
 }
 \arguments{
-\item{df}{An \code{int}, which gives the degrees of freedom of the Wishart.  (> 0)}
+\item{df}{An \code{integer}, which gives the degrees of freedom of the Wishart.
+(> 0)}
 
-\item{S}{A \code{matrix} with dimensions m x m that provides Sigma, the covariance matrix.}
+\item{S}{A \code{matrix} with dimensions m x m that provides Sigma, the
+covariance matrix.}
 }
 \value{
-A \code{matrix} that is a Wishart distribution, aka the sample covariance matrix of a Multivariate Normal Distribution
+A \code{matrix} that is a Wishart distribution, aka the sample covariance
+matrix of a Multivariate Normal Distribution
 }
 \description{
-Creates a random wishart distribution when given degrees of freedom and a sigma matrix.
+Creates a random wishart distribution when given degrees of freedom
+and a sigma matrix.
 }
 \examples{
-#Call with the following data:
+# Call with the following data:
 rwishart(3, diag(2))
 
 # Validation
@@ -35,8 +39,8 @@ vR = apply(o, 1:2, var)
 stopifnot(all.equal(vR, Va, tolerance = 1/16))
 }
 \seealso{
-\code{\link{riwishart}} and \code{\link{probitHLM}}
+\code{\link[=riwishart]{riwishart()}} and \code{\link[=probitHLM]{probitHLM()}}
 }
 \author{
-James J Balamuta
+James Joseph Balamuta
 }
