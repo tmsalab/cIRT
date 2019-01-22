@@ -8,32 +8,42 @@ cIRT(subject_ids, fixed_effects, B_elem_plus1, rv_effects, trial_matrix,
   choices_nk, burnit, chain_length = 10000L)
 }
 \arguments{
-\item{subject_ids}{A \code{vector} that contains subject IDs for each line of data in the choice vector 
-(e.g. For 1 subject that made 5 choices, we would have the number 1 appear five times consecutively.)}
+\item{subject_ids}{A \code{vector} that contains subject IDs for each line of
+data in the choice vector (e.g. For 1 subject that
+made 5 choices, we would have the number 1 appear
+five times consecutively.)}
 
-\item{fixed_effects}{A \code{matrix} with NK x P1 dimensions that acts as the design matrix for terms WITHOUT theta.}
+\item{fixed_effects}{A \code{matrix} with NK x P1 dimensions that acts as the
+design matrix for terms WITHOUT theta.}
 
-\item{B_elem_plus1}{A V[[1]] dimensional column \code{vector} indicating which zeta_i relate to theta_i.}
+\item{B_elem_plus1}{A \code{V[[1]]} dimensional column \code{vector} indicating
+which zeta_i relate to theta_i.}
 
-\item{rv_effects}{A \code{matrix} with NK x V dimensions for random effects design matrix.}
+\item{rv_effects}{A \code{matrix} with NK x V dimensions for random effects
+design matrix.}
 
-\item{trial_matrix}{A \code{matrix} with N x J dimensions, where J denotes the number of items presented.
-The matrix MUST contain only 1's and 0's.}
+\item{trial_matrix}{A \code{matrix} with N x J dimensions, where J denotes the
+number of items presented. The matrix MUST contain
+only 1's and 0's.}
 
-\item{choices_nk}{A \code{vector} with NK length that contains the choice value e.g. 0 or 1.}
+\item{choices_nk}{A \code{vector} with NK length that contains the choice
+value e.g. 0 or 1.}
 
-\item{burnit}{An \code{int} that describes how many MCMC draws should be discarded.}
+\item{burnit}{An \code{int} that describes how many MCMC draws should be
+discarded.}
 
-\item{chain_length}{An \code{int} that controls how many MCMC draws there are. (>0)}
+\item{chain_length}{An \code{int} that controls how many MCMC draws there are.
+(> 0)}
 }
 \value{
 A \code{list} that contains:
+
 \describe{
-  \item{\code{as}}{A \code{matrix} of dimension chain_length x J}
-  \item{\code{bs}}{A \code{matrix} of dimension chain_length x J}
-  \item{\code{gs}}{A \code{matrix} of dimension chain_length x P_1}
-  \item{\code{Sigma_zeta_inv}}{An \code{array} of dimension V x V x chain_length}
-  \item{\code{betas}}{A \code{matrix} of dimension chain_length x P_2}
+\item{\code{as}}{A \code{matrix} of dimension chain_length x J}
+\item{\code{bs}}{A \code{matrix} of dimension chain_length x J}
+\item{\code{gs}}{A \code{matrix} of dimension chain_length x P_1}
+\item{\code{Sigma_zeta_inv}}{An \code{array} of dimension V x V x chain_length}
+\item{\code{betas}}{A \code{matrix} of dimension chain_length x P_2}
 }
 }
 \description{
@@ -112,8 +122,9 @@ apply(out_model_thurstone$bs, 2, FUN = mean)
 }
 }
 \seealso{
-\code{\link{TwoPLChoicemcmc}}, \code{\link{probitHLM}}, \code{\link{center_matrix}}, \code{\link{rmvnorm}}, \code{\link{rwishart}}, and \code{\link{riwishart}}
+\code{\link[=TwoPLChoicemcmc]{TwoPLChoicemcmc()}}, \code{\link[=probitHLM]{probitHLM()}}, \code{\link[=center_matrix]{center_matrix()}},
+\code{\link[=rmvnorm]{rmvnorm()}}, \code{\link[=rwishart]{rwishart()}}, and \code{\link[=riwishart]{riwishart()}}
 }
 \author{
-Steven Culpepper, James J Balamuta
+Steven Andrew Culpepper and James Joseph Balamuta
 }

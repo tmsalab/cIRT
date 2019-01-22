@@ -4,71 +4,87 @@
 \alias{probitHLM}
 \title{Probit Hierarchial Level Model}
 \usage{
-probitHLM(unique_subject_ids, subject_ids, choices_nk, fixed_effects_design,
-  rv_effects_design, B_elem_plus1, gamma, beta, theta, zeta_rv, WtW, Z_c,
-  Wzeta_0, inv_Sigma_gamma, mu_gamma, Sigma_zeta_inv, S0, mu_beta,
-  sigma_beta_inv)
+probitHLM(unique_subject_ids, subject_ids, choices_nk,
+  fixed_effects_design, rv_effects_design, B_elem_plus1, gamma, beta,
+  theta, zeta_rv, WtW, Z_c, Wzeta_0, inv_Sigma_gamma, mu_gamma,
+  Sigma_zeta_inv, S0, mu_beta, sigma_beta_inv)
 }
 \arguments{
-\item{unique_subject_ids}{A \code{vector} with length N x 1 containing unique subject IDs.}
+\item{unique_subject_ids}{A \code{vector} with length N x 1 containing
+unique subject IDs.}
 
-\item{subject_ids}{A \code{vector} with length N*K x 1 containing subject IDs.}
+\item{subject_ids}{A \code{vector} with length N*K x 1 containing
+subject IDs.}
 
-\item{choices_nk}{A \code{vector} with length N*K x 1 containing subject choices.}
+\item{choices_nk}{A \code{vector} with length N*K x 1 containing
+subject choices.}
 
-\item{fixed_effects_design}{A \code{matrix} with dimensions N*K x P containing fixed effect variables.}
+\item{fixed_effects_design}{A \code{matrix} with dimensions N*K x P containing
+fixed effect variables.}
 
-\item{rv_effects_design}{A \code{matrix} with dimensions N*K x V containing random effect variables.}
+\item{rv_effects_design}{A \code{matrix} with dimensions N*K x V containing
+random effect variables.}
 
-\item{B_elem_plus1}{A V[[1]] dimensional column \code{vector} indicating which zeta_i relate to theta_i.}
+\item{B_elem_plus1}{A \code{V[[1]]} dimensional column \code{vector}
+indicating which zeta_i relate to theta_i.}
 
-\item{gamma}{A \code{vector} with dimensions P_1 x 1 containing fixed parameter estimates.}
+\item{gamma}{A \code{vector} with dimensions P_1 x 1 containing
+fixed parameter estimates.}
 
-\item{beta}{A \code{vector} with dimensions P_2 x 1 containing random parameter estimates.}
+\item{beta}{A \code{vector} with dimensions P_2 x 1 containing
+random parameter estimates.}
 
-\item{theta}{A \code{vector} with dimensions N x 1 containing subject understanding estimates.}
+\item{theta}{A \code{vector} with dimensions N x 1 containing
+subject understanding estimates.}
 
-\item{zeta_rv}{A \code{matrix} with dimensions N x V containing random parameter estimates.}
+\item{zeta_rv}{A \code{matrix} with dimensions N x V containing
+random parameter estimates.}
 
-\item{WtW}{A \code{field<matrix>} P x P x N contains the caching for direct sum.}
+\item{WtW}{A \code{field<matrix>} P x P x N contains the
+caching for direct sum.}
 
-\item{Z_c}{A \code{vec} with dimensions N*K x 1}
+\item{Z_c}{A \code{vector} with dimensions N*K x 1}
 
-\item{Wzeta_0}{A \code{vec} with dimensions N*K x 1}
+\item{Wzeta_0}{A \code{vector} with dimensions N*K x 1}
 
-\item{inv_Sigma_gamma}{A \code{matrix} with dimensions P x P that is the prior inverse sigma matrix for gamma.}
+\item{inv_Sigma_gamma}{A \code{matrix} with dimensions P x P that is the
+prior inverse sigma matrix for gamma.}
 
-\item{mu_gamma}{A \code{vector} with length P x 1 that is the prior mean vector for gamma.}
+\item{mu_gamma}{A \code{vector} with length P x 1 that is the prior
+mean vector for gamma.}
 
-\item{Sigma_zeta_inv}{A \code{matrix} with dimensions V x V that is the prior inverse sigma matrix for zeta.}
+\item{Sigma_zeta_inv}{A \code{matrix} with dimensions V x V that is the
+prior inverse sigma matrix for zeta.}
 
-\item{S0}{A \code{matrix} with dimensions V x V that is the prior sigma matrix for zeta.}
+\item{S0}{A \code{matrix} with dimensions V x V that is the
+prior sigma matrix for zeta.}
 
-\item{mu_beta}{A \code{vec} with dimensions P_2 x 1, that is the mean of beta.}
+\item{mu_beta}{A \code{vector} with dimensions P_2 x 1, that is
+the mean of beta.}
 
-\item{sigma_beta_inv}{A \code{mat} with dimensions P_2 x P_2, that is the inverse sigma matrix of beta.}
+\item{sigma_beta_inv}{A \code{matrix} with dimensions P_2 x P_2, that is
+the inverse sigma matrix of beta.}
 }
 \value{
-A \code{matrix} that is an inverse wishart distribution.
-
 A \code{list} that contains:
 \describe{
-  \item{\code{zeta_1}}{A \code{vector} of length N}
-  \item{\code{sigma_zeta_inv_1}}{A \code{matrix} of dimensions V x V}
-  \item{\code{gamma_1}}{A \code{vector} of length P}   
-  \item{\code{beta_1}}{A \code{vector} of length V}
-  \item{\code{B}}{A \code{matrix} of length V}
+\item{\code{zeta_1}}{A \code{vector} of length N}
+\item{\code{sigma_zeta_inv_1}}{A \code{matrix} of dimensions V x V}
+\item{\code{gamma_1}}{A \code{vector} of length P}
+\item{\code{beta_1}}{A \code{vector} of length V}
+\item{\code{B}}{A \code{matrix} of length V}
 }
 }
 \description{
 Performs modeling procedure for a Probit Hierarchial Level Model.
 }
 \details{
-The function is implemented to decrease the amount of vectorizations necessary.
+The function is implemented to decrease the amount of vectorizations
+necessary.
 }
 \seealso{
-\code{\link{rwishart}} and \code{\link{TwoPLChoicemcmc}}
+\code{\link[=rwishart]{rwishart()}} and \code{\link[=TwoPLChoicemcmc]{TwoPLChoicemcmc()}}
 }
 \author{
-Steven A Culpepper, James J Balamuta
+Steven Andrew Culpepper and James Joseph Balamuta
 }

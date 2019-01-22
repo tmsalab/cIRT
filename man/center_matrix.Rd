@@ -18,7 +18,7 @@ given matrix in a centering operation.
 }
 \details{
 The application of this function to a matrix mimics the use of a centering matrix
- given by: \eqn{{C_n} = {I_n} - \frac{1}{n}{11^T}}
+given by: \eqn{{C_n} = {I_n} - \frac{1}{n}{11^T}}
 }
 \examples{
 nobs = 500

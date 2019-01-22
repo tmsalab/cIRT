@@ -3,40 +3,65 @@
 #include "total_cpp.h"
 #include "armadillo_manipulations.h"
 
-
 //' Two Parameter Choice IRT Model MCMC
 //' 
 //' Performs an MCMC routine for a two parameter IRT Model using Choice Data 
-//' @param unique_subject_ids A \code{vector} with length N x 1 containing unique subject IDs.
-//' @param subject_ids A \code{vector} with length N*K x 1 containing subject IDs.
-//' @param choices_nk A \code{vector} with length N*K x 1 containing subject choices.
-//' @param fixed_effects A \code{matrix} with dimensions N*K x P_1 containing fixed effect design matrix without theta.
-//' @param B A V dimensional column \code{vector} relating theta_i and zeta_i.
-//' @param rv_effects_design A \code{matrix} with dimensions N*K x V containing random effect variables.
-//' @param gamma A \code{vector} with dimensions P x 1 containing fixed parameter estimates, where \eqn{P = P_1 + P_2}
-//' @param beta A \code{vector} with dimensions \eqn{P_2} containing random parameter estimates.
-//' @param zeta_rv A \code{matrix} with dimensions N x V containing random parameter estimates.
-//' @param Sigma_zeta_inv A \code{matrix} with dimensions \eqn{P_2 x P_2}
-//' @param Y dichotomous item responses, a \code{matrix} of dimensions n x J
-//' @param theta0 latent theta, a \code{vector} of length n
-//' @param a0 item discriminations, a \code{vector} of length J
-//' @param b0 item locations, a \code{vector} of length J
-//' @param mu_xi0 prior for item parameter means, requires a \code{vector} of dimension 2 (i.e. c(0,1))
-//' @param Sig_xi0 prior for item parameter vc matrix, a \code{matrix} of dimension 2x2 (i.e. diag(2))
-//' @return A \code{list} that contains:
+//' 
+//' @param unique_subject_ids A `vector` with length \eqn{N \times 1}{N x 1}
+//'                           containing unique subject IDs.
+//' @param subject_ids        A `vector` with length \eqn{NK \times 1}{N*K x 1}
+//'                           containing subject IDs.
+//' @param choices_nk         A `vector` with length \eqn{NK \times 1}{N*K x 1}
+//'                           containing subject choices.
+//' @param fixed_effects      A `matrix` with dimensions 
+//'                           \eqn{NK \times P_1}{N*K x P_1} containing 
+//'                           fixed effect design matrix without theta.
+//' @param B                  A \eqn{V} dimensional column `vector` 
+//'                           relating \eqn{\theta_i}{theta_i} and 
+//'                           \eqn{\zeta_i}{zeta_i}.
+//' @param rv_effects_design  A `matrix` with dimensions 
+//'                           \eqn{NK \times V}{N*K x V} containing
+//'                           random effect variables.
+//' @param gamma              A `vector` with dimensions \eqn{P \times 1}{P x 1}
+//'                           containing fixed parameter estimates,
+//'                           where \eqn{P = P_1 + P_2}
+//' @param beta               A `vector` with dimensions \eqn{P_2} 
+//'                           containing random parameter estimates.
+//' @param zeta_rv            A `matrix` with dimensions \eqn{N \times V}{N x V}
+//'                           containing random parameter estimates.
+//' @param Sigma_zeta_inv     A `matrix` with dimensions 
+//'                           \eqn{P_2 \times P_2}{P_2 x P_2}.
+//' @param Y                  A `matrix` of dimensions \eqn{N \times J}{N x J} 
+//'                           for Dichotomous item responses
+//' @param theta0             A `vector` of length \eqn{N \times 1}{N x 1}
+//'                           for latent theta.
+//' @param a0                 A `vector` of length \eqn{J} 
+//'                           for item discriminations.
+//' @param b0                 A `vector` of length \eqn{J} 
+//'                           for item locations.
+//' @param mu_xi0             A `vector` of dimension 2 (i.e. c(0,1)) that is a
+//'                           prior for item parameter means.
+//' @param Sig_xi0            A `matrix` of dimension 2x2 (i.e. diag(2)) that
+//'                           is a prior for item parameter vc matrix.
+//'                           
+//' @return 
+//' A `list` that contains:
 //' \describe{
-//'   \item{\code{ai1}}{A \code{vector} of length J}
-//'   \item{\code{bi1}}{A \code{vector} of length J}   
-//'   \item{\code{theta1}}{A \code{vector} of length N}
-//'   \item{\code{Z_c}}{A \code{matrix} of length NK}
-//'   \item{\code{Wzeta_0}}{A \code{matrix} of length NK}
+//'   \item{\code{ai1}}{A `vector` of length J}
+//'   \item{\code{bi1}}{A `vector` of length J}   
+//'   \item{\code{theta1}}{A `vector` of length N}
+//'   \item{\code{Z_c}}{A `matrix` of length NK}
+//'   \item{\code{Wzeta_0}}{A `matrix` of length NK}
 //' }
-//' @seealso \code{\link{cIRT}}, \code{\link{rmvnorm}}, and \code{\link{riwishart}}
-//' @author Steven Culpepper and James J Balamuta
+//' 
+//' @author 
+//' Steven Andrew Culpepper and James Joseph Balamuta
+//' 
+//' @seealso [cIRT()], [rmvnorm()], and [riwishart()]
 //' @export
 //' @examples \dontrun{
-//' #Call with the following data:
-//' TwoPLChoicemcmc(cogDAT,theta0,a0,b0,mu_xi0,Sig_xi0)
+//' # Call with the following data:
+//' TwoPLChoicemcmc(cogDAT, theta0, a0, b0, mu_xi0, Sig_xi0)
 //' }
 // [[Rcpp::export]]
 Rcpp::List TwoPLChoicemcmc(/* New Parameters */
@@ -278,37 +303,64 @@ const arma::vec& mu_xi0, const arma::mat& Sig_xi0){
 //' Probit Hierarchial Level Model
 //' 
 //' Performs modeling procedure for a Probit Hierarchial Level Model. 
-//' @param unique_subject_ids A \code{vector} with length N x 1 containing unique subject IDs.
-//' @param subject_ids A \code{vector} with length N*K x 1 containing subject IDs.
-//' @param choices_nk A \code{vector} with length N*K x 1 containing subject choices.
-//' @param fixed_effects_design A \code{matrix} with dimensions N*K x P containing fixed effect variables.
-//' @param rv_effects_design A \code{matrix} with dimensions N*K x V containing random effect variables.
-//' @param B_elem_plus1 A V[[1]] dimensional column \code{vector} indicating which zeta_i relate to theta_i.
-//' @param gamma A \code{vector} with dimensions P_1 x 1 containing fixed parameter estimates.
-//' @param beta A \code{vector} with dimensions P_2 x 1 containing random parameter estimates.
-//' @param theta A \code{vector} with dimensions N x 1 containing subject understanding estimates.
-//' @param zeta_rv A \code{matrix} with dimensions N x V containing random parameter estimates.
-//' @param WtW A \code{field<matrix>} P x P x N contains the caching for direct sum.
-//' @param Z_c A \code{vec} with dimensions N*K x 1
-//' @param Wzeta_0 A \code{vec} with dimensions N*K x 1
-//' @param inv_Sigma_gamma A \code{matrix} with dimensions P x P that is the prior inverse sigma matrix for gamma.
-//' @param mu_gamma A \code{vector} with length P x 1 that is the prior mean vector for gamma.
-//' @param Sigma_zeta_inv A \code{matrix} with dimensions V x V that is the prior inverse sigma matrix for zeta.
-//' @param S0 A \code{matrix} with dimensions V x V that is the prior sigma matrix for zeta.
-//' @param mu_beta A \code{vec} with dimensions P_2 x 1, that is the mean of beta.
-//' @param sigma_beta_inv A \code{mat} with dimensions P_2 x P_2, that is the inverse sigma matrix of beta. 
-//' @return A \code{matrix} that is an inverse wishart distribution.
-//' @details The function is implemented to decrease the amount of vectorizations necessary.
-//' @seealso \code{\link{rwishart}} and \code{\link{TwoPLChoicemcmc}}
-//' @author Steven A Culpepper, James J Balamuta
-//' @return A \code{list} that contains:
+//' 
+//' @param unique_subject_ids   A `vector` with length N x 1 containing 
+//'                             unique subject IDs.
+//' @param subject_ids          A `vector` with length N*K x 1 containing 
+//'                             subject IDs.
+//' @param choices_nk           A `vector` with length N*K x 1 containing 
+//'                             subject choices.
+//' @param fixed_effects_design A `matrix` with dimensions N*K x P containing 
+//'                             fixed effect variables.
+//' @param rv_effects_design    A `matrix` with dimensions N*K x V containing
+//'                             random effect variables.
+//' @param B_elem_plus1         A `V[[1]]` dimensional column `vector`
+//'                             indicating which zeta_i relate to theta_i.
+//' @param gamma                A `vector` with dimensions P_1 x 1 containing
+//'                             fixed parameter estimates.
+//' @param beta                 A `vector` with dimensions P_2 x 1 containing
+//'                             random parameter estimates.
+//' @param theta                A `vector` with dimensions N x 1 containing
+//'                             subject understanding estimates.
+//' @param zeta_rv              A `matrix` with dimensions N x V containing
+//'                             random parameter estimates.
+//' @param WtW                  A `field<matrix>` P x P x N contains the 
+//'                             caching for direct sum.
+//' @param Z_c                  A `vector` with dimensions N*K x 1
+//' @param Wzeta_0              A `vector` with dimensions N*K x 1
+//' @param inv_Sigma_gamma      A `matrix` with dimensions P x P that is the
+//'                             prior inverse sigma matrix for gamma.
+//' @param mu_gamma             A `vector` with length P x 1 that is the prior 
+//'                             mean vector for gamma.
+//' @param Sigma_zeta_inv       A `matrix` with dimensions V x V that is the
+//'                             prior inverse sigma matrix for zeta.
+//' @param S0                   A `matrix` with dimensions V x V that is the
+//'                             prior sigma matrix for zeta.
+//' @param mu_beta              A `vector` with dimensions P_2 x 1, that is 
+//'                             the mean of beta.
+//' @param sigma_beta_inv       A `matrix` with dimensions P_2 x P_2, that is 
+//'                             the inverse sigma matrix of beta. 
+//' 
+//' @author 
+//' Steven Andrew Culpepper and James Joseph Balamuta
+//' 
+//' @details 
+//' The function is implemented to decrease the amount of vectorizations
+//' necessary.
+//' 
+//' @seealso
+//' [rwishart()] and [TwoPLChoicemcmc()]
+//' 
+//' @return
+//' A `list` that contains:
 //' \describe{
-//'   \item{\code{zeta_1}}{A \code{vector} of length N}
-//'   \item{\code{sigma_zeta_inv_1}}{A \code{matrix} of dimensions V x V}
-//'   \item{\code{gamma_1}}{A \code{vector} of length P}   
-//'   \item{\code{beta_1}}{A \code{vector} of length V}
-//'   \item{\code{B}}{A \code{matrix} of length V}
+//'   \item{\code{zeta_1}}{A `vector` of length N}
+//'   \item{\code{sigma_zeta_inv_1}}{A `matrix` of dimensions V x V}
+//'   \item{\code{gamma_1}}{A `vector` of length P}   
+//'   \item{\code{beta_1}}{A `vector` of length V}
+//'   \item{\code{B}}{A `matrix` of length V}
 //' }
+//' 
 //' @export
 // [[Rcpp::export]]
 Rcpp::List probitHLM(const arma::vec& unique_subject_ids, 
@@ -435,28 +487,48 @@ Rcpp::List probitHLM(const arma::vec& unique_subject_ids,
 //' Generic Implementation of Choice IRT MCMC
 //' 
 //' Builds a model using MCMC 
-//' @param subject_ids A \code{vector} that contains subject IDs for each line of data in the choice vector 
-//' (e.g. For 1 subject that made 5 choices, we would have the number 1 appear five times consecutively.)
-//' @param fixed_effects A \code{matrix} with NK x P1 dimensions that acts as the design matrix for terms WITHOUT theta.
-//' @param B_elem_plus1 A V[[1]] dimensional column \code{vector} indicating which zeta_i relate to theta_i.
-//' @param rv_effects A \code{matrix} with NK x V dimensions for random effects design matrix.
-//' @param trial_matrix A \code{matrix} with N x J dimensions, where J denotes the number of items presented.
-//' The matrix MUST contain only 1's and 0's. 
-//' @param choices_nk A \code{vector} with NK length that contains the choice value e.g. 0 or 1. 
-//' @param chain_length An \code{int} that controls how many MCMC draws there are. (>0)
-//' @param burnit An \code{int} that describes how many MCMC draws should be discarded.
-//' @return A \code{list} that contains:
+//' 
+//' @param subject_ids    A `vector` that contains subject IDs for each line of
+//'                       data in the choice vector (e.g. For 1 subject that 
+//'                       made 5 choices, we would have the number 1 appear
+//'                       five times consecutively.)
+//' @param fixed_effects  A `matrix` with NK x P1 dimensions that acts as the
+//'                       design matrix for terms WITHOUT theta.
+//' @param B_elem_plus1   A `V[[1]]` dimensional column `vector` indicating 
+//'                       which zeta_i relate to theta_i.
+//' @param rv_effects     A `matrix` with NK x V dimensions for random effects 
+//'                       design matrix.
+//' @param trial_matrix   A `matrix` with N x J dimensions, where J denotes the
+//'                       number of items presented. The matrix MUST contain
+//'                       only 1's and 0's. 
+//' @param choices_nk     A `vector` with NK length that contains the choice 
+//'                       value e.g. 0 or 1. 
+//' @param chain_length   An `int` that controls how many MCMC draws there are.
+//'                       (> 0)
+//' @param burnit         An `int` that describes how many MCMC draws should be
+//'                       discarded.
+//' 
+//' @return 
+//' A `list` that contains:
+//' 
 //' \describe{
-//'   \item{\code{as}}{A \code{matrix} of dimension chain_length x J}
-//'   \item{\code{bs}}{A \code{matrix} of dimension chain_length x J}
-//'   \item{\code{gs}}{A \code{matrix} of dimension chain_length x P_1}
+//'   \item{\code{as}}{A `matrix` of dimension chain_length x J}
+//'   \item{\code{bs}}{A `matrix` of dimension chain_length x J}
+//'   \item{\code{gs}}{A `matrix` of dimension chain_length x P_1}
 //'   \item{\code{Sigma_zeta_inv}}{An \code{array} of dimension V x V x chain_length}
-//'   \item{\code{betas}}{A \code{matrix} of dimension chain_length x P_2}
+//'   \item{\code{betas}}{A `matrix` of dimension chain_length x P_2}
 //' }
-//' @seealso \code{\link{TwoPLChoicemcmc}}, \code{\link{probitHLM}}, \code{\link{center_matrix}}, \code{\link{rmvnorm}}, \code{\link{rwishart}}, and \code{\link{riwishart}}
-//' @author Steven Culpepper, James J Balamuta
+//' 
+//' @author 
+//' Steven Andrew Culpepper and James Joseph Balamuta
+//' 
+//' @seealso 
+//' [TwoPLChoicemcmc()], [probitHLM()], [center_matrix()],
+//' [rmvnorm()], [rwishart()], and [riwishart()]
+//' 
 //' @export
-//' @examples \dontrun{
+//' @examples 
+//' \dontrun{
 //' # Variables
 //' # Y = trial matix
 //' # C = KN vector of binary choices

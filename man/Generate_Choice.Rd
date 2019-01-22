@@ -35,8 +35,8 @@ Generate_Choice(N, J, K, theta, as, bs, zeta, gamma, X, W, subject_ids,
 \value{
 A \code{list} that contains:
 \describe{
-  \item{\code{Y}}{A \code{matrix} of dimension N by J}
-  \item{\code{C}}{A \code{vector} of length NK}
+\item{\code{Y}}{A \code{matrix} of dimension N by J}
+\item{\code{C}}{A \code{vector} of length NK}
 }
 }
 \description{
