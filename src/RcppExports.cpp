@@ -8,7 +8,7 @@ using namespace Rcpp;
 
 // direct_sum
 arma::mat direct_sum(arma::field<arma::mat> x);
-RcppExport SEXP cIRT_direct_sum(SEXP xSEXP) {
+RcppExport SEXP _cIRT_direct_sum(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -19,7 +19,7 @@ END_RCPP
 }
 // center_matrix
 arma::mat center_matrix(const arma::mat& x);
-RcppExport SEXP cIRT_center_matrix(SEXP xSEXP) {
+RcppExport SEXP _cIRT_center_matrix(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -30,7 +30,7 @@ END_RCPP
 }
 // TwoPLChoicemcmc
 Rcpp::List TwoPLChoicemcmc(/* New Parameters */ const arma::vec& unique_subject_ids, const arma::vec& subject_ids, const arma::vec& choices_nk, const arma::mat& fixed_effects, const arma::vec& B, const arma::mat& rv_effects_design, const arma::vec& gamma, const arma::vec& beta, const arma::mat& zeta_rv, const arma::mat& Sigma_zeta_inv, /* Old Parameters */ const arma::mat& Y, const arma::vec& theta0, const arma::vec& a0, const arma::vec& b0, const arma::vec& mu_xi0, const arma::mat& Sig_xi0);
-RcppExport SEXP cIRT_TwoPLChoicemcmc(SEXP unique_subject_idsSEXP, SEXP subject_idsSEXP, SEXP choices_nkSEXP, SEXP fixed_effectsSEXP, SEXP BSEXP, SEXP rv_effects_designSEXP, SEXP gammaSEXP, SEXP betaSEXP, SEXP zeta_rvSEXP, SEXP Sigma_zeta_invSEXP, SEXP YSEXP, SEXP theta0SEXP, SEXP a0SEXP, SEXP b0SEXP, SEXP mu_xi0SEXP, SEXP Sig_xi0SEXP) {
+RcppExport SEXP _cIRT_TwoPLChoicemcmc(SEXP unique_subject_idsSEXP, SEXP subject_idsSEXP, SEXP choices_nkSEXP, SEXP fixed_effectsSEXP, SEXP BSEXP, SEXP rv_effects_designSEXP, SEXP gammaSEXP, SEXP betaSEXP, SEXP zeta_rvSEXP, SEXP Sigma_zeta_invSEXP, SEXP YSEXP, SEXP theta0SEXP, SEXP a0SEXP, SEXP b0SEXP, SEXP mu_xi0SEXP, SEXP Sig_xi0SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -56,7 +56,7 @@ END_RCPP
 }
 // probitHLM
 Rcpp::List probitHLM(const arma::vec& unique_subject_ids, const arma::vec& subject_ids, const arma::vec& choices_nk, const arma::mat& fixed_effects_design, const arma::mat& rv_effects_design, const arma::uvec& B_elem_plus1, const arma::mat& gamma, const arma::vec& beta, const arma::vec& theta, const arma::mat& zeta_rv, /* Trading Memory for Speed */                      const arma::field<arma::mat>& WtW, const arma::vec Z_c, const arma::vec Wzeta_0, /* Bunch of priors */                      const arma::mat& inv_Sigma_gamma, const arma::mat& mu_gamma, const arma::mat& Sigma_zeta_inv, const arma::mat& S0, const arma::vec& mu_beta, const arma::mat& sigma_beta_inv);
-RcppExport SEXP cIRT_probitHLM(SEXP unique_subject_idsSEXP, SEXP subject_idsSEXP, SEXP choices_nkSEXP, SEXP fixed_effects_designSEXP, SEXP rv_effects_designSEXP, SEXP B_elem_plus1SEXP, SEXP gammaSEXP, SEXP betaSEXP, SEXP thetaSEXP, SEXP zeta_rvSEXP, SEXP WtWSEXP, SEXP Z_cSEXP, SEXP Wzeta_0SEXP, SEXP inv_Sigma_gammaSEXP, SEXP mu_gammaSEXP, SEXP Sigma_zeta_invSEXP, SEXP S0SEXP, SEXP mu_betaSEXP, SEXP sigma_beta_invSEXP) {
+RcppExport SEXP _cIRT_probitHLM(SEXP unique_subject_idsSEXP, SEXP subject_idsSEXP, SEXP choices_nkSEXP, SEXP fixed_effects_designSEXP, SEXP rv_effects_designSEXP, SEXP B_elem_plus1SEXP, SEXP gammaSEXP, SEXP betaSEXP, SEXP thetaSEXP, SEXP zeta_rvSEXP, SEXP WtWSEXP, SEXP Z_cSEXP, SEXP Wzeta_0SEXP, SEXP inv_Sigma_gammaSEXP, SEXP mu_gammaSEXP, SEXP Sigma_zeta_invSEXP, SEXP S0SEXP, SEXP mu_betaSEXP, SEXP sigma_beta_invSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -85,7 +85,7 @@ END_RCPP
 }
 // cIRT
 Rcpp::List cIRT(arma::vec subject_ids, arma::mat fixed_effects, arma::uvec B_elem_plus1, arma::mat rv_effects, arma::mat trial_matrix, arma::vec choices_nk, unsigned int burnit, unsigned int chain_length);
-RcppExport SEXP cIRT_cIRT(SEXP subject_idsSEXP, SEXP fixed_effectsSEXP, SEXP B_elem_plus1SEXP, SEXP rv_effectsSEXP, SEXP trial_matrixSEXP, SEXP choices_nkSEXP, SEXP burnitSEXP, SEXP chain_lengthSEXP) {
+RcppExport SEXP _cIRT_cIRT(SEXP subject_idsSEXP, SEXP fixed_effectsSEXP, SEXP B_elem_plus1SEXP, SEXP rv_effectsSEXP, SEXP trial_matrixSEXP, SEXP choices_nkSEXP, SEXP burnitSEXP, SEXP chain_lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -103,7 +103,7 @@ END_RCPP
 }
 // rmvnorm
 arma::mat rmvnorm(unsigned int n, const arma::vec& mu, const arma::mat& S);
-RcppExport SEXP cIRT_rmvnorm(SEXP nSEXP, SEXP muSEXP, SEXP SSEXP) {
+RcppExport SEXP _cIRT_rmvnorm(SEXP nSEXP, SEXP muSEXP, SEXP SSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -116,7 +116,7 @@ END_RCPP
 }
 // rwishart
 arma::mat rwishart(unsigned int df, const arma::mat& S);
-RcppExport SEXP cIRT_rwishart(SEXP dfSEXP, SEXP SSEXP) {
+RcppExport SEXP _cIRT_rwishart(SEXP dfSEXP, SEXP SSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -128,7 +128,7 @@ END_RCPP
 }
 // riwishart
 arma::mat riwishart(unsigned int df, const arma::mat& S);
-RcppExport SEXP cIRT_riwishart(SEXP dfSEXP, SEXP SSEXP) {
+RcppExport SEXP _cIRT_riwishart(SEXP dfSEXP, SEXP SSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -140,7 +140,7 @@ END_RCPP
 }
 // Total_Tabulate
 arma::uvec Total_Tabulate(unsigned int N, unsigned int J, const arma::mat Y);
-RcppExport SEXP cIRT_Total_Tabulate(SEXP NSEXP, SEXP JSEXP, SEXP YSEXP) {
+RcppExport SEXP _cIRT_Total_Tabulate(SEXP NSEXP, SEXP JSEXP, SEXP YSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -153,7 +153,7 @@ END_RCPP
 }
 // Generate_Choice
 Rcpp::List Generate_Choice(unsigned int N, unsigned int J, unsigned int K, const arma::vec& theta, const arma::vec& as, const arma::vec& bs, const arma::mat& zeta, const arma::vec& gamma, const arma::mat& X, const arma::mat& W, const arma::vec& subject_ids, const arma::vec& unique_subject_ids);
-RcppExport SEXP cIRT_Generate_Choice(SEXP NSEXP, SEXP JSEXP, SEXP KSEXP, SEXP thetaSEXP, SEXP asSEXP, SEXP bsSEXP, SEXP zetaSEXP, SEXP gammaSEXP, SEXP XSEXP, SEXP WSEXP, SEXP subject_idsSEXP, SEXP unique_subject_idsSEXP) {
+RcppExport SEXP _cIRT_Generate_Choice(SEXP NSEXP, SEXP JSEXP, SEXP KSEXP, SEXP thetaSEXP, SEXP asSEXP, SEXP bsSEXP, SEXP zetaSEXP, SEXP gammaSEXP, SEXP XSEXP, SEXP WSEXP, SEXP subject_idsSEXP, SEXP unique_subject_idsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -172,4 +172,23 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(Generate_Choice(N, J, K, theta, as, bs, zeta, gamma, X, W, subject_ids, unique_subject_ids));
     return rcpp_result_gen;
 END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_cIRT_direct_sum", (DL_FUNC) &_cIRT_direct_sum, 1},
+    {"_cIRT_center_matrix", (DL_FUNC) &_cIRT_center_matrix, 1},
+    {"_cIRT_TwoPLChoicemcmc", (DL_FUNC) &_cIRT_TwoPLChoicemcmc, 16},
+    {"_cIRT_probitHLM", (DL_FUNC) &_cIRT_probitHLM, 19},
+    {"_cIRT_cIRT", (DL_FUNC) &_cIRT_cIRT, 8},
+    {"_cIRT_rmvnorm", (DL_FUNC) &_cIRT_rmvnorm, 3},
+    {"_cIRT_rwishart", (DL_FUNC) &_cIRT_rwishart, 2},
+    {"_cIRT_riwishart", (DL_FUNC) &_cIRT_riwishart, 2},
+    {"_cIRT_Total_Tabulate", (DL_FUNC) &_cIRT_Total_Tabulate, 3},
+    {"_cIRT_Generate_Choice", (DL_FUNC) &_cIRT_Generate_Choice, 12},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_cIRT(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }

@@ -21,7 +21,7 @@
 #'          matrix(rnorm(18),nrow=2,ncol=9))
 #' direct_sum(x)
 direct_sum <- function(x) {
-    .Call('cIRT_direct_sum', PACKAGE = 'cIRT', x)
+    .Call(`_cIRT_direct_sum`, x)
 }
 
 #' Center a Matrix
@@ -42,7 +42,7 @@ direct_sum <- function(x) {
 #' r_centered = scale(x)
 #' arma_centered1 = center_matrix(x)
 center_matrix <- function(x) {
-    .Call('cIRT_center_matrix', PACKAGE = 'cIRT', x)
+    .Call(`_cIRT_center_matrix`, x)
 }
 
 #' Two Parameter Choice IRT Model MCMC
@@ -80,7 +80,7 @@ center_matrix <- function(x) {
 #' TwoPLChoicemcmc(cogDAT,theta0,a0,b0,mu_xi0,Sig_xi0)
 #' }
 TwoPLChoicemcmc <- function(unique_subject_ids, subject_ids, choices_nk, fixed_effects, B, rv_effects_design, gamma, beta, zeta_rv, Sigma_zeta_inv, Y, theta0, a0, b0, mu_xi0, Sig_xi0) {
-    .Call('cIRT_TwoPLChoicemcmc', PACKAGE = 'cIRT', unique_subject_ids, subject_ids, choices_nk, fixed_effects, B, rv_effects_design, gamma, beta, zeta_rv, Sigma_zeta_inv, Y, theta0, a0, b0, mu_xi0, Sig_xi0)
+    .Call(`_cIRT_TwoPLChoicemcmc`, unique_subject_ids, subject_ids, choices_nk, fixed_effects, B, rv_effects_design, gamma, beta, zeta_rv, Sigma_zeta_inv, Y, theta0, a0, b0, mu_xi0, Sig_xi0)
 }
 
 #' Probit Hierarchial Level Model
@@ -119,7 +119,7 @@ TwoPLChoicemcmc <- function(unique_subject_ids, subject_ids, choices_nk, fixed_e
 #' }
 #' @export
 probitHLM <- function(unique_subject_ids, subject_ids, choices_nk, fixed_effects_design, rv_effects_design, B_elem_plus1, gamma, beta, theta, zeta_rv, WtW, Z_c, Wzeta_0, inv_Sigma_gamma, mu_gamma, Sigma_zeta_inv, S0, mu_beta, sigma_beta_inv) {
-    .Call('cIRT_probitHLM', PACKAGE = 'cIRT', unique_subject_ids, subject_ids, choices_nk, fixed_effects_design, rv_effects_design, B_elem_plus1, gamma, beta, theta, zeta_rv, WtW, Z_c, Wzeta_0, inv_Sigma_gamma, mu_gamma, Sigma_zeta_inv, S0, mu_beta, sigma_beta_inv)
+    .Call(`_cIRT_probitHLM`, unique_subject_ids, subject_ids, choices_nk, fixed_effects_design, rv_effects_design, B_elem_plus1, gamma, beta, theta, zeta_rv, WtW, Z_c, Wzeta_0, inv_Sigma_gamma, mu_gamma, Sigma_zeta_inv, S0, mu_beta, sigma_beta_inv)
 }
 
 #' Generic Implementation of Choice IRT MCMC
@@ -217,7 +217,7 @@ probitHLM <- function(unique_subject_ids, subject_ids, choices_nk, fixed_effects
 #' apply(out_model_thurstone$bs, 2, FUN = mean)
 #' }
 cIRT <- function(subject_ids, fixed_effects, B_elem_plus1, rv_effects, trial_matrix, choices_nk, burnit, chain_length = 10000L) {
-    .Call('cIRT_cIRT', PACKAGE = 'cIRT', subject_ids, fixed_effects, B_elem_plus1, rv_effects, trial_matrix, choices_nk, burnit, chain_length)
+    .Call(`_cIRT_cIRT`, subject_ids, fixed_effects, B_elem_plus1, rv_effects, trial_matrix, choices_nk, burnit, chain_length)
 }
 
 #' Generate Random Multivariate Normal Distribution
@@ -234,7 +234,7 @@ cIRT <- function(subject_ids, fixed_effects, B_elem_plus1, rv_effects, trial_mat
 #' rmvnorm(2, c(0,0), diag(2))
 #' @export
 rmvnorm <- function(n, mu, S) {
-    .Call('cIRT_rmvnorm', PACKAGE = 'cIRT', n, mu, S)
+    .Call(`_cIRT_rmvnorm`, n, mu, S)
 }
 
 #' Generate Random Wishart Distribution
@@ -263,7 +263,7 @@ rmvnorm <- function(n, mu, S) {
 #' vR = apply(o, 1:2, var)
 #' stopifnot(all.equal(vR, Va, tolerance = 1/16))
 rwishart <- function(df, S) {
-    .Call('cIRT_rwishart', PACKAGE = 'cIRT', df, S)
+    .Call(`_cIRT_rwishart`, df, S)
 }
 
 #' Generate Random Inverse Wishart Distribution
@@ -279,7 +279,7 @@ rwishart <- function(df, S) {
 #' #Call with the following data:
 #' riwishart(3, diag(2))
 riwishart <- function(df, S) {
-    .Call('cIRT_riwishart', PACKAGE = 'cIRT', df, S)
+    .Call(`_cIRT_riwishart`, df, S)
 }
 
 #' Calculate Tabulated Total Scores 
@@ -292,7 +292,7 @@ riwishart <- function(df, S) {
 #' @author Steven Andrew Culpepper
 #' @export
 Total_Tabulate <- function(N, J, Y) {
-    .Call('cIRT_Total_Tabulate', PACKAGE = 'cIRT', N, J, Y)
+    .Call(`_cIRT_Total_Tabulate`, N, J, Y)
 }
 
 #' Generate Observed Data from choice model
@@ -318,6 +318,6 @@ Total_Tabulate <- function(N, J, Y) {
 #' @author Steven Culpepper and James J Balamuta
 #' @export
 Generate_Choice <- function(N, J, K, theta, as, bs, zeta, gamma, X, W, subject_ids, unique_subject_ids) {
-    .Call('cIRT_Generate_Choice', PACKAGE = 'cIRT', N, J, K, theta, as, bs, zeta, gamma, X, W, subject_ids, unique_subject_ids)
+    .Call(`_cIRT_Generate_Choice`, N, J, K, theta, as, bs, zeta, gamma, X, W, subject_ids, unique_subject_ids)
 }
 
