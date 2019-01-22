@@ -18,6 +18,8 @@ Imports:
     Rcpp (>= 1.0.0)
 LinkingTo: Rcpp, RcppArmadillo (>= 0.9.200)
 RoxygenNote: 6.1.1
+Roxygen: list(markdown = TRUE)
+Encoding: UTF-8
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
