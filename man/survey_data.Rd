@@ -6,23 +6,25 @@
 \title{Survey Data}
 \format{A data frame with 102 observations on the following 2 variables.
 \describe{
-  \item{\code{id}}{Subject's Assigned Research ID}
-  \item{\code{sex}}{Subject's sex: 
-    \itemize{
-       \item Male
-       \item Female
-    }
-  }
+\item{\code{id}}{Subject's Assigned Research ID}
+\item{\code{sex}}{Subject's sex:
+\itemize{
+\item Male
+\item Female
+}
+}
 }}
 \source{
 Choice38 Experiment at UIUC during Spring 2014 - Fall 2014
 }
 \usage{
-data(survey_data)
+survey_data
 }
 \description{
-This data set contains the subject's responses survey questions administered using Choice38.
+This data set contains the subject's responses survey questions administered
+using Choice38.
 }
 \author{
-Steven Culpepper and James Balamuta
+Steven Andrew Culpepper and James Joseph Balamuta
 }
+\keyword{datasets}

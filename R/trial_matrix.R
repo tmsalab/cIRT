@@ -1,8 +1,8 @@
-#' @name trial_matrix
-#' @title Trial Matrix Data
-#' @description This data set contains the subject's responses to items. Correct answers are denoted by 1 and incorrect answers are denoted by 0.
-#' @docType data
-#' @usage data(trial_matrix)
+#' Trial Matrix Data
+#' 
+#' This data set contains the subject's responses to items. 
+#' Correct answers are denoted by 1 and incorrect answers are denoted by 0.
+#' 
 #' @format A data frame with 252 observations on the following 30 variables.
 #' \describe{
 #'   \item{\code{t1}}{Subject's Response to Item 1.}
@@ -36,6 +36,10 @@
 #'   \item{\code{t29}}{Subject's Response to Item 29.}
 #'   \item{\code{t30}}{Subject's Response to Item 30.}
 #' }
-#' @source Choice38 Experiment at UIUC during Spring 2014 - Fall 2014
-#' @author Steven Culpepper and James Balamuta
-NULL
+#' 
+#' @source 
+#' Choice38 Experiment at UIUC during Spring 2014 - Fall 2014
+#' 
+#' @author 
+#' Steven Andrew Culpepper and James Joseph Balamuta
+"trial_matrix"
