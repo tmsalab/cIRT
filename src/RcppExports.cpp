@@ -29,12 +29,12 @@ BEGIN_RCPP
 END_RCPP
 }
 // TwoPLChoicemcmc
-Rcpp::List TwoPLChoicemcmc(/* New Parameters */ const arma::vec& unique_subject_ids, const arma::vec& subject_ids, const arma::vec& choices_nk, const arma::mat& fixed_effects, const arma::vec& B, const arma::mat& rv_effects_design, const arma::vec& gamma, const arma::vec& beta, const arma::mat& zeta_rv, const arma::mat& Sigma_zeta_inv, /* Old Parameters */ const arma::mat& Y, const arma::vec& theta0, const arma::vec& a0, const arma::vec& b0, const arma::vec& mu_xi0, const arma::mat& Sig_xi0);
+Rcpp::List TwoPLChoicemcmc(/* New Parameters */                            const arma::vec& unique_subject_ids, const arma::vec& subject_ids, const arma::vec& choices_nk, const arma::mat& fixed_effects, const arma::vec& B, const arma::mat& rv_effects_design, const arma::vec& gamma, const arma::vec& beta, const arma::mat& zeta_rv, const arma::mat& Sigma_zeta_inv, /* Old Parameters */                            const arma::mat& Y, const arma::vec& theta0, const arma::vec& a0, const arma::vec& b0, const arma::vec& mu_xi0, const arma::mat& Sig_xi0);
 RcppExport SEXP _cIRT_TwoPLChoicemcmc(SEXP unique_subject_idsSEXP, SEXP subject_idsSEXP, SEXP choices_nkSEXP, SEXP fixed_effectsSEXP, SEXP BSEXP, SEXP rv_effects_designSEXP, SEXP gammaSEXP, SEXP betaSEXP, SEXP zeta_rvSEXP, SEXP Sigma_zeta_invSEXP, SEXP YSEXP, SEXP theta0SEXP, SEXP a0SEXP, SEXP b0SEXP, SEXP mu_xi0SEXP, SEXP Sig_xi0SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< /* New Parameters */ const arma::vec& >::type unique_subject_ids(unique_subject_idsSEXP);
+    Rcpp::traits::input_parameter< /* New Parameters */                            const arma::vec& >::type unique_subject_ids(unique_subject_idsSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type subject_ids(subject_idsSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type choices_nk(choices_nkSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type fixed_effects(fixed_effectsSEXP);
@@ -44,7 +44,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const arma::vec& >::type beta(betaSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type zeta_rv(zeta_rvSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type Sigma_zeta_inv(Sigma_zeta_invSEXP);
-    Rcpp::traits::input_parameter< /* Old Parameters */ const arma::mat& >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< /* Old Parameters */                            const arma::mat& >::type Y(YSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type theta0(theta0SEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type a0(a0SEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type b0(b0SEXP);
@@ -55,7 +55,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // probitHLM
-Rcpp::List probitHLM(const arma::vec& unique_subject_ids, const arma::vec& subject_ids, const arma::vec& choices_nk, const arma::mat& fixed_effects_design, const arma::mat& rv_effects_design, const arma::uvec& B_elem_plus1, const arma::mat& gamma, const arma::vec& beta, const arma::vec& theta, const arma::mat& zeta_rv, /* Trading Memory for Speed */                      const arma::field<arma::mat>& WtW, const arma::vec Z_c, const arma::vec Wzeta_0, /* Bunch of priors */                      const arma::mat& inv_Sigma_gamma, const arma::mat& mu_gamma, const arma::mat& Sigma_zeta_inv, const arma::mat& S0, const arma::vec& mu_beta, const arma::mat& sigma_beta_inv);
+Rcpp::List probitHLM(const arma::vec& unique_subject_ids, const arma::vec& subject_ids, const arma::vec& choices_nk, const arma::mat& fixed_effects_design, const arma::mat& rv_effects_design, const arma::uvec& B_elem_plus1, const arma::mat& gamma, const arma::vec& beta, const arma::vec& theta, const arma::mat& zeta_rv, /* Trading Memory for Speed */           const arma::field<arma::mat>& WtW, const arma::vec Z_c, const arma::vec Wzeta_0, /* Bunch of priors */           const arma::mat& inv_Sigma_gamma, const arma::mat& mu_gamma, const arma::mat& Sigma_zeta_inv, const arma::mat& S0, const arma::vec& mu_beta, const arma::mat& sigma_beta_inv);
 RcppExport SEXP _cIRT_probitHLM(SEXP unique_subject_idsSEXP, SEXP subject_idsSEXP, SEXP choices_nkSEXP, SEXP fixed_effects_designSEXP, SEXP rv_effects_designSEXP, SEXP B_elem_plus1SEXP, SEXP gammaSEXP, SEXP betaSEXP, SEXP thetaSEXP, SEXP zeta_rvSEXP, SEXP WtWSEXP, SEXP Z_cSEXP, SEXP Wzeta_0SEXP, SEXP inv_Sigma_gammaSEXP, SEXP mu_gammaSEXP, SEXP Sigma_zeta_invSEXP, SEXP S0SEXP, SEXP mu_betaSEXP, SEXP sigma_beta_invSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -70,10 +70,10 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const arma::vec& >::type beta(betaSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type theta(thetaSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type zeta_rv(zeta_rvSEXP);
-    Rcpp::traits::input_parameter< /* Trading Memory for Speed */                      const arma::field<arma::mat>& >::type WtW(WtWSEXP);
+    Rcpp::traits::input_parameter< /* Trading Memory for Speed */           const arma::field<arma::mat>& >::type WtW(WtWSEXP);
     Rcpp::traits::input_parameter< const arma::vec >::type Z_c(Z_cSEXP);
     Rcpp::traits::input_parameter< const arma::vec >::type Wzeta_0(Wzeta_0SEXP);
-    Rcpp::traits::input_parameter< /* Bunch of priors */                      const arma::mat& >::type inv_Sigma_gamma(inv_Sigma_gammaSEXP);
+    Rcpp::traits::input_parameter< /* Bunch of priors */           const arma::mat& >::type inv_Sigma_gamma(inv_Sigma_gammaSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type mu_gamma(mu_gammaSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type Sigma_zeta_inv(Sigma_zeta_invSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type S0(S0SEXP);

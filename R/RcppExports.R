@@ -2,103 +2,124 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' Direct Sum of Matrices
-#' 
+#'
 #' Computes the direct sum of all matrices passed in via the list.
+#' 
+#' @param x A `field<matrix>` or `list` containing matrices
+#' 
+#' @return 
+#' Matrix containing the direct sum of all matrices in the list.
+#' 
+#' @author 
+#' James Joseph Balamuta
+#' 
 #' @details
-#' Consider matrix A (mxn) and B (k x p).
-#' A direct sum is a diagonal matrix A (+) B with dimensions (m + k) x (n + p).
-#' @param x list containing matrices
-#' @return ds_matrix matrix containing the direct sum in list.
-#' @author James J Balamuta
+#' Consider matrix \eqn{A} (\eqn{M \times N}{M x N}) and
+#' \eqn{B} (\eqn{K \times P}{k x p}). A direct sum is a diagonal matrix 
+#' \eqn{A (+) B} with dimensions \eqn{(m + k) x (n + p)}.
+#' 
 #' @export
 #' @examples
-#' x = list(matrix(0,nrow=5,ncol=3),
-#'          matrix(1,nrow=5,ncol=3))
-#' direct_sum(x)
 #' 
-#' x = list(matrix(rnorm(15),nrow=5,ncol=3),
-#'          matrix(rnorm(30),nrow=5,ncol=6),
-#'          matrix(rnorm(18),nrow=2,ncol=9))
+#' x = list(matrix(0, nrow = 5, ncol = 3),
+#'          matrix(1, nrow = 5, ncol = 3))
+#' direct_sum(x)
+#'
+#' x = list(matrix(rnorm(15), nrow = 5, ncol = 3),
+#'          matrix(rnorm(30), nrow = 5, ncol = 6),
+#'          matrix(rnorm(18), nrow = 2, ncol = 9))
 #' direct_sum(x)
 direct_sum <- function(x) {
     .Call(`_cIRT_direct_sum`, x)
 }
 
 #' Center a Matrix
-#' 
+#'
 #' Obtains the mean of each column of the matrix and subtracts it from the
 #' given matrix in a centering operation.
-#' @param x A \code{matrix} with any dimensions
-#' @return centered_matrix A \code{matrix} with the same dimensions of X that has been centered.
-#' @details The application of this function to a matrix mimics the use of a centering matrix
-#'  given by: \eqn{{C_n} = {I_n} - \frac{1}{n}{11^T}}
-#' @seealso \code{\link{cIRT}}
-#' @author James J Balamuta
+#' 
+#' @param x A `matrix` with any dimensions
+#' 
+#' @return
+#' A `matrix` with the same dimensions of X that has been centered. 
+#' 
+#' @author 
+#' James Joseph Balamuta
+#' 
+#' @details 
+#' The application of this function to a matrix mimics the use of a 
+#' centering matrix given by:
+#' 
+#' \deqn{{C_n} = {I_n} - \frac{1}{n}{11^T}} 
+#' 
+#' @seealso
+#' [cIRT()]
+#' 
 #' @export
-#' @examples 
+#' @examples
 #' nobs = 500
 #' nvars = 20
-#' x = matrix(rnorm(nobs*nvars),nrow=nobs,ncol=nvars)
-#' r_centered = scale(x)
+#' x = matrix(rnorm(nobs * nvars), nrow = nobs, ncol = nvars) 
+#' r_centered = scale(x) 
 #' arma_centered1 = center_matrix(x)
 center_matrix <- function(x) {
     .Call(`_cIRT_center_matrix`, x)
 }
 
 #' Two Parameter Choice IRT Model MCMC
-#' 
-#' Performs an MCMC routine for a two parameter IRT Model using Choice Data 
-#' 
+#'
+#' Performs an MCMC routine for a two parameter IRT Model using Choice Data
+#'
 #' @param unique_subject_ids A `vector` with length \eqn{N \times 1}{N x 1}
 #'                           containing unique subject IDs.
 #' @param subject_ids        A `vector` with length \eqn{NK \times 1}{N*K x 1}
 #'                           containing subject IDs.
 #' @param choices_nk         A `vector` with length \eqn{NK \times 1}{N*K x 1}
 #'                           containing subject choices.
-#' @param fixed_effects      A `matrix` with dimensions 
-#'                           \eqn{NK \times P_1}{N*K x P_1} containing 
+#' @param fixed_effects      A `matrix` with dimensions
+#'                           \eqn{NK \times P_1}{N*K x P_1} containing
 #'                           fixed effect design matrix without theta.
-#' @param B                  A \eqn{V} dimensional column `vector` 
-#'                           relating \eqn{\theta_i}{theta_i} and 
+#' @param B                  A \eqn{V} dimensional column `vector`
+#'                           relating \eqn{\theta_i}{theta_i} and
 #'                           \eqn{\zeta_i}{zeta_i}.
-#' @param rv_effects_design  A `matrix` with dimensions 
+#' @param rv_effects_design  A `matrix` with dimensions
 #'                           \eqn{NK \times V}{N*K x V} containing
 #'                           random effect variables.
 #' @param gamma              A `vector` with dimensions \eqn{P \times 1}{P x 1}
 #'                           containing fixed parameter estimates,
 #'                           where \eqn{P = P_1 + P_2}
-#' @param beta               A `vector` with dimensions \eqn{P_2} 
+#' @param beta               A `vector` with dimensions \eqn{P_2}
 #'                           containing random parameter estimates.
 #' @param zeta_rv            A `matrix` with dimensions \eqn{N \times V}{N x V}
 #'                           containing random parameter estimates.
-#' @param Sigma_zeta_inv     A `matrix` with dimensions 
+#' @param Sigma_zeta_inv     A `matrix` with dimensions
 #'                           \eqn{P_2 \times P_2}{P_2 x P_2}.
-#' @param Y                  A `matrix` of dimensions \eqn{N \times J}{N x J} 
+#' @param Y                  A `matrix` of dimensions \eqn{N \times J}{N x J}
 #'                           for Dichotomous item responses
 #' @param theta0             A `vector` of length \eqn{N \times 1}{N x 1}
 #'                           for latent theta.
-#' @param a0                 A `vector` of length \eqn{J} 
+#' @param a0                 A `vector` of length \eqn{J}
 #'                           for item discriminations.
-#' @param b0                 A `vector` of length \eqn{J} 
+#' @param b0                 A `vector` of length \eqn{J}
 #'                           for item locations.
 #' @param mu_xi0             A `vector` of dimension 2 (i.e. c(0,1)) that is a
 #'                           prior for item parameter means.
 #' @param Sig_xi0            A `matrix` of dimension 2x2 (i.e. diag(2)) that
 #'                           is a prior for item parameter vc matrix.
-#'                           
-#' @return 
+#'
+#' @return
 #' A `list` that contains:
 #' \describe{
 #'   \item{\code{ai1}}{A `vector` of length J}
-#'   \item{\code{bi1}}{A `vector` of length J}   
+#'   \item{\code{bi1}}{A `vector` of length J}
 #'   \item{\code{theta1}}{A `vector` of length N}
 #'   \item{\code{Z_c}}{A `matrix` of length NK}
 #'   \item{\code{Wzeta_0}}{A `matrix` of length NK}
 #' }
-#' 
-#' @author 
+#'
+#' @author
 #' Steven Andrew Culpepper and James Joseph Balamuta
-#' 
+#'
 #' @seealso [cIRT()], [rmvnorm()], and [riwishart()]
 #' @export
 #' @examples \dontrun{
@@ -110,16 +131,16 @@ TwoPLChoicemcmc <- function(unique_subject_ids, subject_ids, choices_nk, fixed_e
 }
 
 #' Probit Hierarchial Level Model
-#' 
-#' Performs modeling procedure for a Probit Hierarchial Level Model. 
-#' 
-#' @param unique_subject_ids   A `vector` with length N x 1 containing 
+#'
+#' Performs modeling procedure for a Probit Hierarchial Level Model.
+#'
+#' @param unique_subject_ids   A `vector` with length N x 1 containing
 #'                             unique subject IDs.
-#' @param subject_ids          A `vector` with length N*K x 1 containing 
+#' @param subject_ids          A `vector` with length N*K x 1 containing
 #'                             subject IDs.
-#' @param choices_nk           A `vector` with length N*K x 1 containing 
+#' @param choices_nk           A `vector` with length N*K x 1 containing
 #'                             subject choices.
-#' @param fixed_effects_design A `matrix` with dimensions N*K x P containing 
+#' @param fixed_effects_design A `matrix` with dimensions N*K x P containing
 #'                             fixed effect variables.
 #' @param rv_effects_design    A `matrix` with dimensions N*K x V containing
 #'                             random effect variables.
@@ -133,92 +154,91 @@ TwoPLChoicemcmc <- function(unique_subject_ids, subject_ids, choices_nk, fixed_e
 #'                             subject understanding estimates.
 #' @param zeta_rv              A `matrix` with dimensions N x V containing
 #'                             random parameter estimates.
-#' @param WtW                  A `field<matrix>` P x P x N contains the 
+#' @param WtW                  A `field<matrix>` P x P x N contains the
 #'                             caching for direct sum.
 #' @param Z_c                  A `vector` with dimensions N*K x 1
 #' @param Wzeta_0              A `vector` with dimensions N*K x 1
 #' @param inv_Sigma_gamma      A `matrix` with dimensions P x P that is the
 #'                             prior inverse sigma matrix for gamma.
-#' @param mu_gamma             A `vector` with length P x 1 that is the prior 
+#' @param mu_gamma             A `vector` with length P x 1 that is the prior
 #'                             mean vector for gamma.
 #' @param Sigma_zeta_inv       A `matrix` with dimensions V x V that is the
 #'                             prior inverse sigma matrix for zeta.
 #' @param S0                   A `matrix` with dimensions V x V that is the
 #'                             prior sigma matrix for zeta.
-#' @param mu_beta              A `vector` with dimensions P_2 x 1, that is 
+#' @param mu_beta              A `vector` with dimensions P_2 x 1, that is
 #'                             the mean of beta.
-#' @param sigma_beta_inv       A `matrix` with dimensions P_2 x P_2, that is 
-#'                             the inverse sigma matrix of beta. 
-#' 
-#' @author 
-#' Steven Andrew Culpepper and James Joseph Balamuta
-#' 
-#' @details 
-#' The function is implemented to decrease the amount of vectorizations
-#' necessary.
-#' 
-#' @seealso
-#' [rwishart()] and [TwoPLChoicemcmc()]
-#' 
+#' @param sigma_beta_inv       A `matrix` with dimensions P_2 x P_2, that is
+#'                             the inverse sigma matrix of beta.
 #' @return
 #' A `list` that contains:
 #' \describe{
 #'   \item{\code{zeta_1}}{A `vector` of length N}
 #'   \item{\code{sigma_zeta_inv_1}}{A `matrix` of dimensions V x V}
-#'   \item{\code{gamma_1}}{A `vector` of length P}   
+#'   \item{\code{gamma_1}}{A `vector` of length P}
 #'   \item{\code{beta_1}}{A `vector` of length V}
 #'   \item{\code{B}}{A `matrix` of length V}
 #' }
 #' 
+#' @author
+#' Steven Andrew Culpepper and James Joseph Balamuta
+#'
+#' @details
+#' The function is implemented to decrease the amount of vectorizations
+#' necessary.
+#'
+#' @seealso
+#' [rwishart()] and [TwoPLChoicemcmc()]
+#'
 #' @export
 probitHLM <- function(unique_subject_ids, subject_ids, choices_nk, fixed_effects_design, rv_effects_design, B_elem_plus1, gamma, beta, theta, zeta_rv, WtW, Z_c, Wzeta_0, inv_Sigma_gamma, mu_gamma, Sigma_zeta_inv, S0, mu_beta, sigma_beta_inv) {
     .Call(`_cIRT_probitHLM`, unique_subject_ids, subject_ids, choices_nk, fixed_effects_design, rv_effects_design, B_elem_plus1, gamma, beta, theta, zeta_rv, WtW, Z_c, Wzeta_0, inv_Sigma_gamma, mu_gamma, Sigma_zeta_inv, S0, mu_beta, sigma_beta_inv)
 }
 
 #' Generic Implementation of Choice IRT MCMC
-#' 
-#' Builds a model using MCMC 
-#' 
+#'
+#' Builds a model using MCMC
+#'
 #' @param subject_ids    A `vector` that contains subject IDs for each line of
-#'                       data in the choice vector (e.g. For 1 subject that 
+#'                       data in the choice vector (e.g. For 1 subject that
 #'                       made 5 choices, we would have the number 1 appear
 #'                       five times consecutively.)
 #' @param fixed_effects  A `matrix` with NK x P1 dimensions that acts as the
 #'                       design matrix for terms WITHOUT theta.
-#' @param B_elem_plus1   A `V[[1]]` dimensional column `vector` indicating 
+#' @param B_elem_plus1   A `V[[1]]` dimensional column `vector` indicating
 #'                       which zeta_i relate to theta_i.
-#' @param rv_effects     A `matrix` with NK x V dimensions for random effects 
+#' @param rv_effects     A `matrix` with NK x V dimensions for random effects
 #'                       design matrix.
 #' @param trial_matrix   A `matrix` with N x J dimensions, where J denotes the
 #'                       number of items presented. The matrix MUST contain
-#'                       only 1's and 0's. 
-#' @param choices_nk     A `vector` with NK length that contains the choice 
-#'                       value e.g. 0 or 1. 
+#'                       only 1's and 0's.
+#' @param choices_nk     A `vector` with NK length that contains the choice
+#'                       value e.g. 0 or 1.
 #' @param chain_length   An `int` that controls how many MCMC draws there are.
 #'                       (> 0)
 #' @param burnit         An `int` that describes how many MCMC draws should be
 #'                       discarded.
-#' 
-#' @return 
+#'
+#' @return
 #' A `list` that contains:
-#' 
+#'
 #' \describe{
 #'   \item{\code{as}}{A `matrix` of dimension chain_length x J}
 #'   \item{\code{bs}}{A `matrix` of dimension chain_length x J}
 #'   \item{\code{gs}}{A `matrix` of dimension chain_length x P_1}
-#'   \item{\code{Sigma_zeta_inv}}{An \code{array} of dimension V x V x chain_length}
+#'   \item{\code{Sigma_zeta_inv}}{An `array` of dimension V x V x chain_length}
 #'   \item{\code{betas}}{A `matrix` of dimension chain_length x P_2}
 #' }
-#' 
-#' @author 
+#'
+#' @author
 #' Steven Andrew Culpepper and James Joseph Balamuta
-#' 
-#' @seealso 
+#'
+#' @seealso
 #' [TwoPLChoicemcmc()], [probitHLM()], [center_matrix()],
 #' [rmvnorm()], [rwishart()], and [riwishart()]
-#' 
+#'
 #' @export
-#' @examples 
+#' @examples
 #' \dontrun{
 #' # Variables
 #' # Y = trial matix
@@ -239,53 +259,75 @@ probitHLM <- function(unique_subject_ids, subject_ids, choices_nk, fixed_effects
 #' # Load the Data
 #' data(trial_matrix)
 #' data(choice_matrix)
-#' 
+#'
 #' # Thurstone design matrices
-#' all_nopractice = subset(all_data_trials,experiment_loop.thisN>-1)
+#' all_nopractice = subset(all_data_trials, experiment_loop.thisN > -1)
 #' hard_items = choice_matrix$hard_q_id
 #' easy_items = choice_matrix$easy_q_id
-#' 
-#' D_easy = model.matrix(~-1+factor(easy_items))
-#' D_hard = -1*model.matrix(~-1+factor(hard_items))[,-c(5,10,15)]
-#'     
+#'
+#' D_easy = model.matrix( ~ -1 + factor(easy_items))
+#' D_hard = -1 * model.matrix( ~ -1 + factor(hard_items))[, -c(5, 10, 15)]
+#'
 #' # Defining effect-coded contrasts
-#' high_contrasts <- rbind(-1,diag(4))
+#' high_contrasts = rbind(-1, diag(4))
 #' rownames(high_contrasts) = 12:16
-#' low_contrasts <- rbind(-1,diag(2))
+#' low_contrasts = rbind(-1, diag(2))
 #' rownames(low_contrasts) = 4:6
-#'     
+#'
 #' # Creating high & low factors
-#' high = factor(choice_matrix[,'high_value'])
-#' low = factor(choice_matrix[,'low_value'])
+#' high = factor(choice_matrix[, 'high_value'])
+#' low = factor(choice_matrix[, 'low_value'])
 #' contrasts(high) = high_contrasts
 #' contrasts(low) = low_contrasts
-#' 
-#' fixed_effects = model.matrix(~high+low)
-#' fixed_effects_base = fixed_effects[,1]
-#' fixed_effects_int = model.matrix(~high*low)
-#'       
-#'       
+#'
+#' fixed_effects = model.matrix( ~ high + low)
+#' fixed_effects_base = fixed_effects[, 1]
+#' fixed_effects_int = model.matrix( ~ high * low)
+#'
+#'
 #' # Model with Thurstone D Matrix
-#' system.time({ 
-#'   out_model_thurstone = cIRT(choice_matrix[,'subject_id'], 
-#'                              cbind(fixed_effects[,-1],D_easy,D_hard),
-#'                              c(1:ncol(fixed_effects)), 
-#'                              as.matrix(fixed_effects),
-#'                              as.matrix(trial_matrix), 
-#'                              choice_matrix[,'choose_hard_q'],
-#'                                           20000,
-#'                                           25000)
+#' system.time({
+#'  out_model_thurstone = cIRT(
+#'    choice_matrix[, 'subject_id'],
+#'    cbind(fixed_effects[, -1], D_easy, D_hard),
+#'    c(1:ncol(fixed_effects)),
+#'    as.matrix(fixed_effects),
+#'    as.matrix(trial_matrix),
+#'    choice_matrix[, 'choose_hard_q'],
+#'    20000,
+#'    25000
+#'  )
 #' })
-#'       
-#'       
-#' vlabels_thurstone = colnames(cbind(fixed_effects[,-1],D_easy,D_hard))
-#' G_thurstone = t(apply(out_model_thurstone$gs0, 2, FUN = quantile,probs=c(.5,.025,.975)))
-#' rownames(G_thurstone)=vlabels_thurstone
-#' B_thurstone = t(apply(out_model_thurstone$beta, 2, FUN = quantile,probs=c(.5,0.025,.975)))
-#' rownames(B_thurstone)=colnames(fixed_effects)
-#' S_thurstone = solve(apply(out_model_thurstone$Sigma_zeta_inv, c(1,2), FUN = mean))
-#' inv_sd = diag(1/sqrt(diag(solve(apply(out_model_thurstone$Sigma_zeta_inv, c(1,2), FUN = mean)))))
-#' inv_sd%*%S_thurstone%*%inv_sd
+#'
+#'
+#' vlabels_thurstone = colnames(cbind(fixed_effects[, -1], D_easy, D_hard))
+#' G_thurstone = t(apply(
+#'  out_model_thurstone$gs0,
+#'  2,
+#'  FUN = quantile,
+#'  probs = c(.5, .025, .975)
+#' ))
+#'
+#' rownames(G_thurstone) = vlabels_thurstone
+#' B_thurstone = t(apply(
+#'  out_model_thurstone$beta,
+#'  2,
+#'  FUN = quantile,
+#'  probs = c(.5, 0.025, .975)
+#' ))
+#'
+#' rownames(B_thurstone) = colnames(fixed_effects)
+#'
+#' S_thurstone = solve(
+#'   apply(out_model_thurstone$Sigma_zeta_inv, c(1, 2), FUN = mean)
+#' )
+#'
+#' inv_sd = diag(1 / sqrt(diag(solve(
+#'  apply(out_model_thurstone$Sigma_zeta_inv, c(1, 2),
+#'        FUN = mean)
+#' ))))
+#'
+#' inv_sd %*% S_thurstone %*% inv_sd
 #' apply(out_model_thurstone$as, 2, FUN = mean)
 #' apply(out_model_thurstone$bs, 2, FUN = mean)
 #' }
@@ -294,35 +336,56 @@ cIRT <- function(subject_ids, fixed_effects, B_elem_plus1, rv_effects, trial_mat
 }
 
 #' Generate Random Multivariate Normal Distribution
+#'
+#' Creates a random Multivariate Normal when given number of obs, mean,
+#' and sigma. 
 #' 
-#' Creates a random Multivariate Normal when given number of obs, mean, and sigma. 
-#' @param n An \code{int}, which gives the number of observations.  (> 0)
-#' @param mu A \code{vector} length m that represents the means of the normals.
-#' @param S A \code{matrix} with dimensions m x m that provides Sigma, the covariance matrix. 
-#' @return A \code{matrix} that is a Multivariate Normal distribution
-#' @seealso \code{\link{TwoPLChoicemcmc}} and \code{\link{probitHLM}}
-#' @author James J Balamuta
-#' @examples 
-#' #Call with the following data:
-#' rmvnorm(2, c(0,0), diag(2))
+#' @param n  An `integer`, which gives the number of observations.  (> 0) 
+#' @param mu A `vector` length m that represents the means of the normals. 
+#' @param S  A `matrix` with dimensions m x m that provides Sigma,
+#'           the covariance matrix. 
+#' @return 
+#' A `matrix` that is a Multivariate Normal distribution.
+#' 
+#' @author 
+#' James Joseph Balamuta 
+#' 
+#' @seealso
+#' [TwoPLChoicemcmc()] and [probitHLM()]
+#' 
 #' @export
+#' @examples
+#' # Call with the following data: 
+#' rmvnorm(2, c(0,0), diag(2))
 rmvnorm <- function(n, mu, S) {
     .Call(`_cIRT_rmvnorm`, n, mu, S)
 }
 
 #' Generate Random Wishart Distribution
+#'
+#' Creates a random wishart distribution when given degrees of freedom
+#' and a sigma matrix. 
 #' 
-#' Creates a random wishart distribution when given degrees of freedom and a sigma matrix. 
-#' @param df An \code{int}, which gives the degrees of freedom of the Wishart.  (> 0)
-#' @param S A \code{matrix} with dimensions m x m that provides Sigma, the covariance matrix. 
-#' @return A \code{matrix} that is a Wishart distribution, aka the sample covariance matrix of a Multivariate Normal Distribution
-#' @seealso \code{\link{riwishart}} and \code{\link{probitHLM}}
-#' @author James J Balamuta
-#' @export
+#' @param df An `integer`, which gives the degrees of freedom of the Wishart.
+#'           (> 0) 
+#' @param S  A `matrix` with dimensions m x m that provides Sigma, the
+#'           covariance matrix. 
+#'           
+#' @return 
+#' A `matrix` that is a Wishart distribution, aka the sample covariance
+#' matrix of a Multivariate Normal Distribution 
+#' 
+#' @author 
+#' James Joseph Balamuta
+#'  
+#' @seealso 
+#' [riwishart()] and [probitHLM()]
+#' 
+#' @export 
 #' @examples 
-#' #Call with the following data:
+#' # Call with the following data:
 #' rwishart(3, diag(2))
-#' 
+#'
 #' # Validation
 #' set.seed(1337)
 #' S = toeplitz((10:1)/10)
@@ -340,55 +403,84 @@ rwishart <- function(df, S) {
 }
 
 #' Generate Random Inverse Wishart Distribution
+#'
+#' Creates a random inverse wishart distribution when given
+#' degrees of freedom and a sigma matrix. 
 #' 
-#' Creates a random inverse wishart distribution when given degrees of freedom and a sigma matrix. 
-#' @param df An \code{int} that represents the degrees of freedom.  (> 0)
-#' @param S A \code{matrix} with dimensions m x m that provides Sigma, the covariance matrix. 
-#' @return A \code{matrix} that is an inverse wishart distribution.
-#' @seealso \code{\link{rwishart}} and \code{\link{TwoPLChoicemcmc}}
-#' @author James J Balamuta
-#' @export
-#' @examples 
+#' @param df An `integer` that represents the degrees of freedom. (> 0) 
+#' @param S  A `matrix` with dimensions m x m that provides Sigma, 
+#'           the covariance matrix. 
+#' 
+#' @return 
+#' A `matrix` that is an inverse wishart distribution. 
+#' 
+#' @author
+#' James Joseph Balamuta 
+#'  
+#' @seealso 
+#' [rwishart()] and [TwoPLChoicemcmc()]
+#' 
+#' @export 
+#' @examples
 #' #Call with the following data:
 #' riwishart(3, diag(2))
 riwishart <- function(df, S) {
     .Call(`_cIRT_riwishart`, df, S)
 }
 
-#' Calculate Tabulated Total Scores 
-#' 
+#' Calculate Tabulated Total Scores
+#'
 #' Internal function to -2LL
-#' @param N An \code{int}, which gives the number of observations.  (> 0)
-#' @param J An \code{int}, which gives the number of items.  (> 0)
-#' @param Y A N by J \code{matrix} of item responses.
-#' @return A vector of tabulated total scores.
-#' @author Steven Andrew Culpepper
+#' 
+#' @param N An `integer`, which gives the number of observations.  (> 0)
+#' @param J An `integer`, which gives the number of items.  (> 0)
+#' @param Y A N by J `matrix` of item responses.
+#' 
+#' @return 
+#' A vector of tabulated total scores.
+#' 
+#' @author 
+#' Steven Andrew Culpepper
+#' 
 #' @export
 Total_Tabulate <- function(N, J, Y) {
     .Call(`_cIRT_Total_Tabulate`, N, J, Y)
 }
 
 #' Generate Observed Data from choice model
+#'
+#' Generates observed cognitive and choice data from the IRT-Thurstone model.
 #' 
-#' Generates observed cognitive and choice data from the IRT-Thurstone model. 
-#' @param N An \code{integer} for the number of observations.
-#' @param J An \code{integer} for the number of items.
-#' @param K An \code{integer} for the number of paired comparisons.
-#' @param theta A \code{vector} of latent cognitive variables.
-#' @param as item discriminations, a \code{vector} of length J
-#' @param bs item locations, a \code{vector} of length J
-#' @param zeta A \code{matrix} with dimensions N x V containing random parameter estimates.
-#' @param gamma A \code{vector} with dimensions P x 1 containing fixed parameter estimates, where \eqn{P = P_1 + P_2}
-#' @param X A \code{matrix} with dimensions N*K x P_1 containing fixed effect design matrix without theta.
-#' @param W A \code{matrix} with dimensions N*K x V containing random effect variables.
-#' @param subject_ids A \code{vector} with length NK x 1 containing subject-choice IDs.
-#' @param unique_subject_ids A \code{vector} with length N x 1 containing unique subject IDs.
-#' @return A \code{list} that contains:
+#' @param N                  An `integer` for the number of observations.
+#' @param J                  An `integer` for the number of items.
+#' @param K                  An `integer` for the number of paired comparisons.
+#' @param theta              A `vector` of latent cognitive variables.
+#' @param as                 A `vector` of length J with item discriminations.
+#' @param bs                 A `vector` of length J with item locations.
+#' @param zeta               A `matrix` with dimensions N x V containing
+#'                           random parameter estimates. 
+#' @param gamma              A `vector` with dimensions P x 1 containing
+#'                           fixed parameter estimates, where \eqn{P = P_1 + P_2} 
+#' @param X                  A `matrix` with dimensions N*K x P_1 containing 
+#'                           fixed effect design matrix without theta. 
+#' @param W                  A `matrix` with dimensions N*K x V containing
+#'                           random effect variables. 
+#' @param subject_ids        A `vector` with length NK x 1 containing
+#'                           subject-choice IDs. 
+#' @param unique_subject_ids A `vector` with length N x 1 containing
+#'                           unique subject IDs. 
+#' 
+#' @return 
+#' A \code{list} that contains: 
+#' 
 #' \describe{
-#'   \item{\code{Y}}{A \code{matrix} of dimension N by J}
-#'   \item{\code{C}}{A \code{vector} of length NK}
-#' }
-#' @author Steven Culpepper and James J Balamuta
+#'    \item{\code{Y}}{A `matrix` of dimension N by J}
+#'    \item{\code{C}}{A `vector` of length NK}
+#' } 
+#' 
+#' @author 
+#' Steven Andrew Culpepper and James Joseph Balamuta 
+#' 
 #' @export
 Generate_Choice <- function(N, J, K, theta, as, bs, zeta, gamma, X, W, subject_ids, unique_subject_ids) {
     .Call(`_cIRT_Generate_Choice`, N, J, K, theta, as, bs, zeta, gamma, X, W, subject_ids, unique_subject_ids)
