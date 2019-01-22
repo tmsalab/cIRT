@@ -8,7 +8,8 @@
 
 ## Documentation
 
-- Improved in-line documentation
+- Improved in-line documentation.
+- Added Authors' ORCIDs to `DESCRIPTION`.
 
 ## Testing
 
