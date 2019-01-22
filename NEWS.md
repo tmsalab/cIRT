@@ -1,3 +1,19 @@
+# cIRT 1.3.0
+
+## Changes
+
+- Updated package dependencies
+- Enabled C++11 and OpenMP.
+- Switched to allowing Rcpp to handle native registration
+
+## Documentation
+
+- Improved in-line documentation
+
+## Testing
+
+- Enabled TMSA Lab's configuration for Travis-CI.
+
 # cIRT 1.2.1
 
 - Added `src/init.c` for R 3.4 compatibility
