@@ -90,13 +90,14 @@ Rcpp::List Generate_Choice(unsigned int N, unsigned int J, unsigned int K,
     arma::vec Wzeta_0(nk);
     arma::mat etaC_mat(N, K);
 
-    for (unsigned int i = 0; i << N; i++) {
+    for (unsigned int i = 0; i < N; i++) {
         arma::uvec current_subject = find(subject_ids == unique_subject_ids(i));
         arma::mat Wi = W.rows(current_subject);
         arma::mat Xi = X.rows(current_subject);
         Wzeta_0.elem(current_subject) = Wi * trans(zeta.row(i)); // nk x 1
-        etaC_mat.row(i) = gamma.t() * X.t() + zeta.row(i) * Wi.t();
+        etaC_mat.row(i) = gamma.t() * Xi.t() + zeta.row(i) * Wi.t();
     }
+    
     arma::vec etaC = X * gamma + Wzeta_0;
     Cs.elem(find(etaC_mat > ZC)).ones();
 

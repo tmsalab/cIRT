@@ -331,6 +331,7 @@ probitHLM <- function(unique_subject_ids, subject_ids, choices_nk, fixed_effects
 #' apply(out_model_thurstone$as, 2, FUN = mean)
 #' apply(out_model_thurstone$bs, 2, FUN = mean)
 #' }
+#' @export
 cIRT <- function(subject_ids, fixed_effects, B_elem_plus1, rv_effects, trial_matrix, choices_nk, burnit, chain_length = 10000L) {
     .Call(`_cIRT_cIRT`, subject_ids, fixed_effects, B_elem_plus1, rv_effects, trial_matrix, choices_nk, burnit, chain_length)
 }

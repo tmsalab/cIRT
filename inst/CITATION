@@ -6,7 +6,7 @@ citEntry(entry = "Manual",
                                    as.person("James Balamuta")
                                   ),
          year         = 2015,
-         textVersion  = paste("Culpepper, S.A. and Balamuta, J.J (2015)",
+         textVersion  = paste("Culpepper, S. A. and Balamuta, J. J. (2015)",
                               "cIRT: Choice Item Response Theory.",
                               "URL https://cran.r-project.org/package=cIRT.")
 )
