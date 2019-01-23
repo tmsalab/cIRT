@@ -10,17 +10,22 @@ vignette: >
 
 # Intro
 
-The objective of this vignette is to provide clarity as to the estimation procedure used to obtain the results in the paper. This vignette breaks down each section in the example displayed in `cIRT()` function. 
+The objective of this vignette is to provide clarity as to the estimation 
+procedure used to obtain the results in the paper. This vignette breaks down 
+each section in the example displayed in `cIRT()` function. 
 
 # Data
 
-Within this vignette, we used two different data sets to generate the model that are located within `cIRT`.
+Within this vignette, we used two different data sets to generate a Choice
+Item Response Theory Model with the rountine located in `cIRT`.
 
 ```{r load_pkg}
 library(cIRT)
 ```
 
-The first data set, `trial_matrix`, contains whether or not the subject correctly identified the spatial rotation. The second dataset, `choice_matrix`, provides information regarding the choice decision subjects were asked to make. 
+The first data set, `trial_matrix`, contains whether or not the subject
+correctly identified the spatial rotation. The second dataset, `choice_matrix`,
+provides information regarding the choice decision subjects were asked to make. 
 
 ```{r load_data}
 data(trial_matrix)
@@ -40,6 +45,7 @@ D_hard = -1 * model.matrix( ~ -1 + factor(hard_items))[, -c(5, 10, 15)]
 ```
 
 Within this setting, we setup the effect-codes for different constraints. 
+
 ```{r effect_coding}
 # Defining effect-coded contrasts
 high_contrasts = rbind(-1, diag(4))
@@ -78,7 +84,8 @@ system.time({
 })
 ```
 
-We recommend saving the model object as a `.rda` file even though the total computational time is less than 2.5 minutes.  
+We recommend saving the model object as a `.rda` file even though the total
+computational time is less than 2.5 minutes.  
 ```
 ## Save model output to an rda file.
 # save(out_model_thurstone, file='choiceMCMCoutput.rda')
