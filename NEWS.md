@@ -6,6 +6,10 @@
 - Enabled C++11 and OpenMP.
 - Switched to allowing Rcpp to handle native registration
 
+## Bugfix
+
+- Addressed issues in the choice generation procedure.
+
 ## Documentation
 
 - Improved in-line documentation.
