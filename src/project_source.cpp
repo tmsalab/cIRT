@@ -629,6 +629,7 @@ probitHLM(const arma::vec &unique_subject_ids, const arma::vec &subject_ids,
 //' apply(out_model_thurstone$as, 2, FUN = mean)
 //' apply(out_model_thurstone$bs, 2, FUN = mean)
 //' }
+//' @export
 // [[Rcpp::export]]
 Rcpp::List cIRT(arma::vec subject_ids, arma::mat fixed_effects,
                 arma::uvec B_elem_plus1, arma::mat rv_effects,
