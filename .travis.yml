@@ -3,7 +3,6 @@
 ###### Default build via devtools::use_travis()
 
 language: r
-sudo: false
 cache: packages
 
 ###### Custom Options
@@ -19,7 +18,15 @@ env:
 jobs:
   include:
   - r: release
+    after_success:
+    - Rscript -e 'covr::codecov()'
+    before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
+    deploy:
+      provider: script
+      script: Rscript -e 'pkgdown::deploy_site_github()'
+      skip_cleanup: true
   - r: devel
+  - r: oldrel
 
 # If one fails, avoid running the other.
 matrix:
