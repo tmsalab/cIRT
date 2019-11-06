@@ -8,6 +8,11 @@
 
 0 errors | 0 warnings | 0 notes
 
+## Feedback
+
+We believe the issue arising from the additional UBSAN/ASAN tests pointed out
+by Uwe has been fixed.
+
 ## Reverse dependencies
 
 There are no reverse dependencies.
