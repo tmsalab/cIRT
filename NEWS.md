@@ -1,5 +1,10 @@
 # cIRT 1.3.0.900
 
+## Changes
+
+- Added `LazyData: true` to `DESCRIPTION` to match with how the data documentation
+  is called.
+
 ## Documentation
 
 - Added a `pkgdown` website that deploys to <https://tmsalab.github.io/cIRT>.
