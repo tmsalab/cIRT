@@ -1,3 +1,4 @@
+^CRAN-RELEASE$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 LICENSE
@@ -7,3 +8,7 @@ README\.md
 ^README\.Rmd$
 ^README-.*\.png$
 ^src/\.clang-format$
+^codecov\.yml$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

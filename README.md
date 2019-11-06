@@ -1,6 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# cIRT: Choice Item Response Theory
+
+<!-- badges: start -->
+
 [![Build
 Status](https://travis-ci.org/tmsalab/cIRT.svg)](https://travis-ci.org/tmsalab/cIRT)
 [![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
@@ -12,10 +16,9 @@ Status](https://cranchecks.info/badges/worst/cIRT)](https://cran.r-project.org/w
 Downloads](http://cranlogs.r-pkg.org/badges/cIRT?color=brightgreen)](http://www.r-pkg.org/pkg/cIRT)
 [![RStudio CRAN Mirror’s Total
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/cIRT?color=brightgreen)](http://www.r-pkg.org/pkg/cIRT)
-[![Coverage
-status](https://codecov.io/gh/tmsalab/cIRT/branch/master/graph/badge.svg)](https://codecov.io/github/tmsalab/cIRT?branch=master)
-
-# `cIRT` R package
+[![Codecov test
+coverage](https://codecov.io/gh/tmsalab/cIRT/branch/master/graph/badge.svg)](https://codecov.io/gh/tmsalab/cIRT?branch=master)
+<!-- badges: end -->
 
 Jointly model the accuracy of cognitive responses and item choices
 within a bayesian hierarchical framework as described by Culpepper and

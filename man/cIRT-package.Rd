@@ -14,6 +14,7 @@ Jointly model the accuracy of cognitive responses and item choices
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://tmsalab.github.io/cIRT}
   \item \url{https://github.com/tmsalab/cIRT}
   \item Report bugs at \url{https://github.com/tmsalab/cIRT/issues}
 }
