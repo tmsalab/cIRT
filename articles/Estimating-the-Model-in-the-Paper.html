@@ -6,13 +6,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Estimating the Model in the Paper • cIRT</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Estimating the Model in the Paper">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="cIRT">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -24,7 +24,7 @@
   gtag('config', 'UA-151562227-1');
 </script>
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -76,7 +76,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/tmsalab/cIRT">
+  <a href="https://github.com/tmsalab/cIRT/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -94,9 +94,9 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Estimating the Model in the Paper</h1>
+      <h1 data-toc-skip>Estimating the Model in the Paper</h1>
             
-            <h4 class="date">2019-11-06</h4>
+            <h4 class="date">2020-03-22</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/tmsalab/cIRT/blob/master/vignettes/Estimating-the-Model-in-the-Paper.Rmd"><code>vignettes/Estimating-the-Model-in-the-Paper.Rmd</code></a></small>
       <div class="hidden name"><code>Estimating-the-Model-in-the-Paper.Rmd</code></div>
@@ -114,57 +114,57 @@
 <h1 class="hasAnchor">
 <a href="#data" class="anchor"></a>Data</h1>
 <p>Within this vignette, we used two different data sets to generate a Choice Item Response Theory Model with the rountine located in <code>cIRT</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(cIRT)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">cIRT</span>)</pre></body></html></div>
 <p>The first data set, <code>trial_matrix</code>, contains whether or not the subject correctly identified the spatial rotation. The second dataset, <code>choice_matrix</code>, provides information regarding the choice decision subjects were asked to make.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(trial_matrix)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(choice_matrix)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">trial_matrix</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">choice_matrix</span>)</pre></body></html></div>
 </div>
 <div id="constructing-the-model-matrix" class="section level1">
 <h1 class="hasAnchor">
 <a href="#constructing-the-model-matrix" class="anchor"></a>Constructing the Model Matrix</h1>
 <p>Here we construct a thurstone design matrix by obtaining the IDs of hard and easy questions presented for the subject to make a decision upon.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># Create the Thurstone Design Matrices</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">hard_items =<span class="st"> </span>choice_matrix<span class="op">$</span>hard_q_id</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">easy_items =<span class="st"> </span>choice_matrix<span class="op">$</span>easy_q_id</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">D_easy =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span>( <span class="op">~</span><span class="st"> </span><span class="dv">-1</span> <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(easy_items))</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">D_hard =<span class="st"> </span><span class="dv">-1</span> <span class="op">*</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span>( <span class="op">~</span><span class="st"> </span><span class="dv">-1</span> <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(hard_items))[, <span class="op">-</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>)]</a></code></pre></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co"># Create the Thurstone Design Matrices</span>
+<span class="no">hard_items</span> <span class="kw">=</span> <span class="no">choice_matrix</span>$<span class="no">hard_q_id</span>
+<span class="no">easy_items</span> <span class="kw">=</span> <span class="no">choice_matrix</span>$<span class="no">easy_q_id</span>
+
+<span class="no">D_easy</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span>( ~ -<span class="fl">1</span> + <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="no">easy_items</span>))
+<span class="no">D_hard</span> <span class="kw">=</span> -<span class="fl">1</span> * <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span>( ~ -<span class="fl">1</span> + <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="no">hard_items</span>))[, -<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">5</span>, <span class="fl">10</span>, <span class="fl">15</span>)]</pre></body></html></div>
 <p>Within this setting, we setup the effect-codes for different constraints.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># Defining effect-coded contrasts</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">high_contrasts =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span>(<span class="op">-</span><span class="dv">1</span>, <span class="kw"><a href="https://rdrr.io/r/base/diag.html">diag</a></span>(<span class="dv">4</span>))</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(high_contrasts) =<span class="st"> </span><span class="dv">12</span><span class="op">:</span><span class="dv">16</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">low_contrasts =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span>(<span class="op">-</span><span class="dv">1</span>, <span class="kw"><a href="https://rdrr.io/r/base/diag.html">diag</a></span>(<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(low_contrasts) =<span class="st"> </span><span class="dv">4</span><span class="op">:</span><span class="dv">6</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co"># Creating high &amp; low factors</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8">high =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(choice_matrix[, <span class="st">'high_value'</span>])</a>
-<a class="sourceLine" id="cb4-9" data-line-number="9">low =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(choice_matrix[, <span class="st">'low_value'</span>])</a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="kw"><a href="https://rdrr.io/r/stats/contrasts.html">contrasts</a></span>(high) =<span class="st"> </span>high_contrasts</a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="kw"><a href="https://rdrr.io/r/stats/contrasts.html">contrasts</a></span>(low) =<span class="st"> </span>low_contrasts</a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13">fixed_effects =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span>( <span class="op">~</span><span class="st"> </span>high <span class="op">+</span><span class="st"> </span>low)</a>
-<a class="sourceLine" id="cb4-14" data-line-number="14">fixed_effects_base =<span class="st"> </span>fixed_effects[, <span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb4-15" data-line-number="15">fixed_effects_int =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span>( <span class="op">~</span><span class="st"> </span>high <span class="op">*</span><span class="st"> </span>low)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="co"># Defining effect-coded contrasts</span>
+<span class="no">high_contrasts</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span>(-<span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/diag.html">diag</a></span>(<span class="fl">4</span>))
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(<span class="no">high_contrasts</span>) <span class="kw">=</span> <span class="fl">12</span>:<span class="fl">16</span>
+<span class="no">low_contrasts</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span>(-<span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/diag.html">diag</a></span>(<span class="fl">2</span>))
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(<span class="no">low_contrasts</span>) <span class="kw">=</span> <span class="fl">4</span>:<span class="fl">6</span>
+
+<span class="co"># Creating high &amp; low factors</span>
+<span class="no">high</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="no">choice_matrix</span>[, <span class="st">'high_value'</span>])
+<span class="no">low</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="no">choice_matrix</span>[, <span class="st">'low_value'</span>])
+<span class="fu"><a href="https://rdrr.io/r/stats/contrasts.html">contrasts</a></span>(<span class="no">high</span>) <span class="kw">=</span> <span class="no">high_contrasts</span>
+<span class="fu"><a href="https://rdrr.io/r/stats/contrasts.html">contrasts</a></span>(<span class="no">low</span>) <span class="kw">=</span> <span class="no">low_contrasts</span>
+
+<span class="no">fixed_effects</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span>( ~ <span class="no">high</span> + <span class="no">low</span>)
+<span class="no">fixed_effects_base</span> <span class="kw">=</span> <span class="no">fixed_effects</span>[, <span class="fl">1</span>]
+<span class="no">fixed_effects_int</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span>( ~ <span class="no">high</span> * <span class="no">low</span>)</pre></body></html></div>
 </div>
 <div id="modeling-the-data" class="section level1">
 <h1 class="hasAnchor">
 <a href="#modeling-the-data" class="anchor"></a>Modeling the Data</h1>
 <p>Generate the cIRT model using a Thurstone Design Matrix generated above.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># Model with Thurstone D matrix</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span>({</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">  out_model_thurstone =<span class="st"> </span><span class="kw"><a href="../reference/cIRT.html">cIRT</a></span>(</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">    choice_matrix[, <span class="st">'subject_id'</span>],</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">    <span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span>(fixed_effects[, <span class="dv">-1</span>], D_easy, D_hard),</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">    <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span><span class="op">:</span><span class="kw"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span>(fixed_effects)),</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">    <span class="kw"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span>(fixed_effects),</a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">    <span class="kw"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span>(trial_matrix),</a>
-<a class="sourceLine" id="cb5-9" data-line-number="9">    choice_matrix[, <span class="st">'choose_hard_q'</span>],</a>
-<a class="sourceLine" id="cb5-10" data-line-number="10">    <span class="dv">20000</span>,</a>
-<a class="sourceLine" id="cb5-11" data-line-number="11">    <span class="dv">25000</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12">  )</a>
-<a class="sourceLine" id="cb5-13" data-line-number="13">})</a></code></pre></div>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="co"># Model with Thurstone D matrix</span>
+<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span>({
+  <span class="no">out_model_thurstone</span> <span class="kw">=</span> <span class="fu"><a href="../reference/cIRT.html">cIRT</a></span>(
+    <span class="no">choice_matrix</span>[, <span class="st">'subject_id'</span>],
+    <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span>(<span class="no">fixed_effects</span>[, -<span class="fl">1</span>], <span class="no">D_easy</span>, <span class="no">D_hard</span>),
+    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>:<span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span>(<span class="no">fixed_effects</span>)),
+    <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span>(<span class="no">fixed_effects</span>),
+    <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span>(<span class="no">trial_matrix</span>),
+    <span class="no">choice_matrix</span>[, <span class="st">'choose_hard_q'</span>],
+    <span class="fl">20000</span>,
+    <span class="fl">25000</span>
+  )
+})</pre></body></html></div>
 <pre><code>##    user  system elapsed 
-## 361.701   0.504 286.166</code></pre>
+## 181.479   0.868 182.708</code></pre>
 <p>We recommend saving the model object as a <code>.rda</code> file even though the total computational time is less than 2.5 minutes.</p>
 <pre><code>## Save model output to an rda file.
 # save(out_model_thurstone, file='choiceMCMCoutput.rda')
@@ -176,134 +176,124 @@
 <h1 class="hasAnchor">
 <a href="#parameter-estimates" class="anchor"></a>Parameter Estimates</h1>
 <p>Next up, we obtain the parameter estimates of the model by averaging over the different estimates obtained via the Gibbs sampling technique employed.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">vlabels_thurstone =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span>(fixed_effects[, <span class="dv">-1</span>], D_easy, D_hard))</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">G_thurstone =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/t.html">t</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">  out_model_thurstone<span class="op">$</span>gs0,</a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">  <span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb8-6" data-line-number="6">  <span class="dt">FUN =</span> quantile,</a>
-<a class="sourceLine" id="cb8-7" data-line-number="7">  <span class="dt">probs =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(.<span class="dv">5</span>, <span class="fl">.025</span>, <span class="fl">.975</span>)</a>
-<a class="sourceLine" id="cb8-8" data-line-number="8">))</a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="kw"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(G_thurstone) =<span class="st"> </span>vlabels_thurstone</a>
-<a class="sourceLine" id="cb8-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb8-11" data-line-number="11">B_thurstone =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/t.html">t</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(</a>
-<a class="sourceLine" id="cb8-12" data-line-number="12">  out_model_thurstone<span class="op">$</span>beta,</a>
-<a class="sourceLine" id="cb8-13" data-line-number="13">  <span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb8-14" data-line-number="14">  <span class="dt">FUN =</span> quantile,</a>
-<a class="sourceLine" id="cb8-15" data-line-number="15">  <span class="dt">probs =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(.<span class="dv">5</span>, <span class="fl">0.025</span>, <span class="fl">.975</span>)</a>
-<a class="sourceLine" id="cb8-16" data-line-number="16">))</a>
-<a class="sourceLine" id="cb8-17" data-line-number="17"><span class="kw"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(B_thurstone) =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(fixed_effects)</a>
-<a class="sourceLine" id="cb8-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb8-19" data-line-number="19">S_thurstone =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/solve.html">solve</a></span>(</a>
-<a class="sourceLine" id="cb8-20" data-line-number="20">  <span class="kw"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(out_model_thurstone<span class="op">$</span>Sigma_zeta_inv, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">FUN =</span> mean)</a>
-<a class="sourceLine" id="cb8-21" data-line-number="21">)</a>
-<a class="sourceLine" id="cb8-22" data-line-number="22"></a>
-<a class="sourceLine" id="cb8-23" data-line-number="23">inv_sd =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/diag.html">diag</a></span>(<span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/diag.html">diag</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/solve.html">solve</a></span>(</a>
-<a class="sourceLine" id="cb8-24" data-line-number="24">  <span class="kw"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(out_model_thurstone<span class="op">$</span>Sigma_zeta_inv, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">FUN =</span> mean)</a>
-<a class="sourceLine" id="cb8-25" data-line-number="25">))))</a>
-<a class="sourceLine" id="cb8-26" data-line-number="26"></a>
-<a class="sourceLine" id="cb8-27" data-line-number="27">corrmat =<span class="st"> </span>inv_sd <span class="op">%*%</span><span class="st"> </span>S_thurstone <span class="op">%*%</span><span class="st"> </span>inv_sd</a>
-<a class="sourceLine" id="cb8-28" data-line-number="28">as =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(out_model_thurstone<span class="op">$</span>as, <span class="dv">2</span>, <span class="dt">FUN =</span> mean)</a>
-<a class="sourceLine" id="cb8-29" data-line-number="29">bs =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(out_model_thurstone<span class="op">$</span>bs, <span class="dv">2</span>, <span class="dt">FUN =</span> mean)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">vlabels_thurstone</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span>(<span class="no">fixed_effects</span>[, -<span class="fl">1</span>], <span class="no">D_easy</span>, <span class="no">D_hard</span>))
+
+<span class="no">G_thurstone</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(
+  <span class="no">out_model_thurstone</span>$<span class="no">gs0</span>,
+  <span class="fl">2</span>,
+  <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">quantile</span>,
+  <span class="kw">probs</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">.5</span>, <span class="fl">.025</span>, <span class="fl">.975</span>)
+))
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(<span class="no">G_thurstone</span>) <span class="kw">=</span> <span class="no">vlabels_thurstone</span>
+
+<span class="no">B_thurstone</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(
+  <span class="no">out_model_thurstone</span>$<span class="no">beta</span>,
+  <span class="fl">2</span>,
+  <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">quantile</span>,
+  <span class="kw">probs</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">.5</span>, <span class="fl">0.025</span>, <span class="fl">.975</span>)
+))
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(<span class="no">B_thurstone</span>) <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(<span class="no">fixed_effects</span>)
+
+<span class="no">S_thurstone</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/solve.html">solve</a></span>(
+  <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(<span class="no">out_model_thurstone</span>$<span class="no">Sigma_zeta_inv</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">2</span>), <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">mean</span>)
+)
+
+<span class="no">inv_sd</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html">diag</a></span>(<span class="fl">1</span> / <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/diag.html">diag</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/solve.html">solve</a></span>(
+  <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(<span class="no">out_model_thurstone</span>$<span class="no">Sigma_zeta_inv</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">2</span>), <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">mean</span>)
+))))
+
+<span class="no">corrmat</span> <span class="kw">=</span> <span class="no">inv_sd</span> <span class="kw">%*%</span> <span class="no">S_thurstone</span> <span class="kw">%*%</span> <span class="no">inv_sd</span>
+<span class="no">as</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(<span class="no">out_model_thurstone</span>$<span class="no">as</span>, <span class="fl">2</span>, <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">mean</span>)
+<span class="no">bs</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(<span class="no">out_model_thurstone</span>$<span class="no">bs</span>, <span class="fl">2</span>, <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">mean</span>)</pre></body></html></div>
 <p>Thus, we have the following results:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># gs0</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">G_thurstone</a></code></pre></div>
-<pre><code>##                               50%         2.5%        97.5%
-## high1                -0.012083596 -0.117446417  0.095483440
-## high2                -0.078716065 -0.185403650  0.026247923
-## high3                 0.129231840  0.025327550  0.235189084
-## high4                 0.155504305  0.045935395  0.269074033
-## low1                  0.002475778 -0.076557569  0.081409898
-## low2                  0.086965491  0.006301687  0.164948802
-## factor(easy_items)1  -0.256655685 -0.540190677  0.020886749
-## factor(easy_items)2  -0.363466516 -0.644507044 -0.086232303
-## factor(easy_items)3  -0.244655485 -0.533031278  0.045359201
-## factor(easy_items)4  -0.402648740 -0.683330172 -0.127831384
-## factor(easy_items)5  -0.199809661 -0.495967714  0.079821714
-## factor(easy_items)6  -0.447989202 -0.729065048 -0.166675879
-## factor(easy_items)7  -0.297141211 -0.579943842 -0.012405760
-## factor(easy_items)8   0.055337337 -0.217550023  0.330558325
-## factor(easy_items)9  -0.372967513 -0.656021478 -0.085851244
-## factor(easy_items)10 -0.035413529 -0.315166090  0.248241085
-## factor(easy_items)11 -0.296240522 -0.574187245 -0.016177240
-## factor(easy_items)12  0.037144356 -0.236386501  0.305030480
-## factor(easy_items)13 -0.262674957 -0.545875521  0.024226541
-## factor(easy_items)14 -0.508404523 -0.787646185 -0.235047919
-## factor(easy_items)15 -0.091961443 -0.370726952  0.186932009
-## factor(hard_items)16 -0.519278876 -0.784456777 -0.246973020
-## factor(hard_items)17 -0.567491675 -0.834113828 -0.300218527
-## factor(hard_items)18 -1.392276694 -1.677008293 -1.103249770
-## factor(hard_items)19 -0.202044692 -0.468341954  0.066782267
-## factor(hard_items)21 -0.718281906 -0.986001539 -0.444669579
-## factor(hard_items)22 -0.248920614 -0.509739735  0.016210268
-## factor(hard_items)23 -0.220366801 -0.484777499  0.038151864
-## factor(hard_items)24 -1.204772142 -1.487811425 -0.924259080
-## factor(hard_items)26 -0.151208955 -0.414590484  0.107316573
-## factor(hard_items)27 -0.251459962 -0.510192100  0.002606851
-## factor(hard_items)28  0.373337064  0.109029152  0.642394204
-## factor(hard_items)29  0.759408889  0.486067095  1.036250723</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># betas</span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">B_thurstone</a></code></pre></div>
+<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="co"># gs0</span>
+<span class="no">G_thurstone</span></pre></body></html></div>
+<pre><code>##                               50%         2.5%       97.5%
+## high1                -0.011444756 -0.118952898  0.09298644
+## high2                -0.081440354 -0.187343843  0.02290541
+## high3                 0.129412223  0.025227381  0.23640458
+## high4                 0.155253571  0.046731224  0.26493412
+## low1                  0.002692604 -0.075344847  0.08145900
+## low2                  0.086928345  0.007540142  0.16540381
+## factor(easy_items)1  -0.258551533 -0.537065015  0.02860629
+## factor(easy_items)2  -0.359932947 -0.646914691 -0.07952220
+## factor(easy_items)3  -0.243314621 -0.529635489  0.03895976
+## factor(easy_items)4  -0.398874402 -0.683404623 -0.12274137
+## factor(easy_items)5  -0.198105704 -0.487078511  0.09246490
+## factor(easy_items)6  -0.443870980 -0.729843343 -0.16006625
+## factor(easy_items)7  -0.293953851 -0.579142284 -0.00944143
+## factor(easy_items)8   0.059698034 -0.218380369  0.33648119
+## factor(easy_items)9  -0.368033043 -0.649708565 -0.08989810
+## factor(easy_items)10 -0.031035185 -0.309608342  0.24611486
+## factor(easy_items)11 -0.298000564 -0.571096161 -0.02096304
+## factor(easy_items)12  0.042004556 -0.231782838  0.31056678
+## factor(easy_items)13 -0.255751901 -0.538455627  0.02332915
+## factor(easy_items)14 -0.508042175 -0.783369403 -0.23885079
+## factor(easy_items)15 -0.088882961 -0.364898326  0.19163669
+## factor(hard_items)16 -0.519276015 -0.790961755 -0.24471101
+## factor(hard_items)17 -0.568485183 -0.836308120 -0.30098455
+## factor(hard_items)18 -1.394749467 -1.687794894 -1.11219942
+## factor(hard_items)19 -0.205930920 -0.474880219  0.06202966
+## factor(hard_items)21 -0.715829150 -0.986350446 -0.44345176
+## factor(hard_items)22 -0.248959637 -0.514588465  0.01694704
+## factor(hard_items)23 -0.219795434 -0.483854365  0.04829328
+## factor(hard_items)24 -1.201998029 -1.488902290 -0.90868336
+## factor(hard_items)26 -0.150357117 -0.412453172  0.10879705
+## factor(hard_items)27 -0.250339433 -0.517190891  0.01376191
+## factor(hard_items)28  0.374971739  0.108711629  0.64528199
+## factor(hard_items)29  0.756989650  0.483046383  1.03710221</code></pre>
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="co"># betas</span>
+<span class="no">B_thurstone</span></pre></body></html></div>
 <pre><code>##                      50%        2.5%       97.5%
-## (Intercept)  0.694814496  0.56459762  0.83527548
-## high1       -0.110030530 -0.24331106  0.02241878
-## high2       -0.006408702 -0.13640777  0.12322825
-## high3        0.036736288 -0.09304992  0.17994909
-## high4        0.100878050 -0.03617053  0.25061922
-## low1         0.023227163 -0.07231107  0.12255036
-## low2        -0.115260060 -0.21185656 -0.01951304</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># Sigma Thurstone</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">S_thurstone</a></code></pre></div>
-<pre><code>##              [,1]         [,2]         [,3]         [,4]         [,5]
-## [1,]  0.382838662 -0.006353401  0.008573238  0.002168865 -0.012735916
-## [2,] -0.006353401  0.080983635 -0.012302643 -0.001922208 -0.027066229
-## [3,]  0.008573238 -0.012302643  0.063733280 -0.008121263 -0.006329747
-## [4,]  0.002168865 -0.001922208 -0.008121263  0.062819653 -0.008907282
-## [5,] -0.012735916 -0.027066229 -0.006329747 -0.008907282  0.086898130
-## [6,] -0.013991546  0.006086199 -0.002910640 -0.005750798  0.001749036
-## [7,] -0.014504110 -0.006958306  0.002046577  0.004213653  0.005093307
+## (Intercept)  0.693171768  0.56422158  0.83554096
+## high1       -0.108191501 -0.23522356  0.02390263
+## high2       -0.001572638 -0.12929392  0.12909280
+## high3        0.035378736 -0.09294826  0.17509786
+## high4        0.099872954 -0.03401230  0.24931305
+## low1         0.022333015 -0.07713276  0.12349698
+## low2        -0.116594616 -0.21295811 -0.01889328</code></pre>
+<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="co"># Sigma Thurstone</span>
+<span class="no">S_thurstone</span></pre></body></html></div>
+<pre><code>##               [,1]         [,2]         [,3]          [,4]         [,5]
+## [1,]  3.849630e-01 -0.006960434  0.010478760 -6.448955e-05 -0.013278640
+## [2,] -6.960434e-03  0.079480495 -0.012584504 -2.923064e-03 -0.024948110
+## [3,]  1.047876e-02 -0.012584504  0.064172418 -7.993668e-03 -0.006179367
+## [4,] -6.448955e-05 -0.002923064 -0.007993668  6.302586e-02 -0.008900087
+## [5,] -1.327864e-02 -0.024948110 -0.006179367 -8.900087e-03  0.084999168
+## [6,] -1.464115e-02  0.006129857 -0.002515558 -6.272140e-03  0.002336424
+## [7,] -1.413436e-02 -0.006372434  0.001412455  3.907167e-03  0.005487744
 ##              [,6]         [,7]
-## [1,] -0.013991546 -0.014504110
-## [2,]  0.006086199 -0.006958306
-## [3,] -0.002910640  0.002046577
-## [4,] -0.005750798  0.004213653
-## [5,]  0.001749036  0.005093307
-## [6,]  0.065057200 -0.013749319
-## [7,] -0.013749319  0.061927792</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">## Item parameters ----</a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co"># a</span></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4">as</a></code></pre></div>
-<pre><code>##  [1] 0.6302565 0.4995160 1.1367549 0.3201262 1.0129511 1.0750479 0.8227219
-##  [8] 0.3749327 0.8182378 0.7465654 0.6140181 1.2093328 0.8412283 0.9728126
-## [15] 0.7928043 1.0123041 0.7102502 0.5851083 0.9496697 1.0712704 1.0152505
-## [22] 0.6621037 0.6328213 0.5772203 0.6150193 0.6140580 0.6645798 0.7942896
-## [29] 0.5038051 0.6471239</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># b</span></a>
-<a class="sourceLine" id="cb17-2" data-line-number="2">bs</a></code></pre></div>
-<pre><code>##  [1] -1.13803004 -1.15606702 -1.53876380 -0.88847718 -1.01359445
-##  [6] -0.93521796 -0.84503263 -0.43581356 -0.47418359 -0.75076006
-## [11] -0.69039203 -0.59946517 -0.66727533 -0.48962499 -0.30515232
-## [16] -0.58739833 -0.49807353 -0.26735164 -0.43376607 -0.52701726
-## [21] -0.32197516 -0.30674424 -0.40321389 -0.22447449 -0.06312005
-## [26]  0.06498412 -0.31777668  0.12989457  0.48892499  0.93329308</code></pre>
+## [1,] -0.014641148 -0.014134363
+## [2,]  0.006129857 -0.006372434
+## [3,] -0.002515558  0.001412455
+## [4,] -0.006272140  0.003907167
+## [5,]  0.002336424  0.005487744
+## [6,]  0.065463966 -0.014066930
+## [7,] -0.014066930  0.062844399</code></pre>
+<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="co">## Item parameters ----</span>
+
+<span class="co"># a</span>
+<span class="no">as</span></pre></body></html></div>
+<pre><code>##  [1] 0.6250183 0.4955993 1.1298188 0.3184012 0.9998572 1.0665026 0.8180998
+##  [8] 0.3710073 0.8164089 0.7449436 0.6191061 1.2039875 0.8388131 0.9704345
+## [15] 0.7951604 1.0070404 0.7093565 0.5837588 0.9471448 1.0810424 1.0162972
+## [22] 0.6579399 0.6333650 0.5814453 0.6166904 0.6159863 0.6648653 0.7891431
+## [29] 0.5043330 0.6381458</code></pre>
+<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="co"># b</span>
+<span class="no">bs</span></pre></body></html></div>
+<pre><code>##  [1] -1.13927662 -1.15585241 -1.53592686 -0.88666851 -1.00960966 -0.93514299
+##  [7] -0.84549755 -0.43454494 -0.47661465 -0.75182218 -0.69562164 -0.60005824
+## [13] -0.66861318 -0.49056659 -0.30653745 -0.58947885 -0.49832063 -0.26835993
+## [19] -0.43648959 -0.53141434 -0.32524036 -0.30699225 -0.40506244 -0.22708112
+## [25] -0.06294772  0.06240106 -0.32110017  0.12989201  0.48801670  0.92735544</code></pre>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#intro">Intro</a></li>
-      <li><a href="#data">Data</a></li>
-      <li><a href="#constructing-the-model-matrix">Constructing the Model Matrix</a></li>
-      <li><a href="#modeling-the-data">Modeling the Data</a></li>
-      <li><a href="#parameter-estimates">Parameter Estimates</a></li>
-      </ul>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
@@ -314,7 +304,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>
