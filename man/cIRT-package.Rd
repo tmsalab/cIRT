@@ -7,7 +7,7 @@
 \title{cIRT: Choice Item Response Theory}
 \description{
 Jointly model the accuracy of cognitive responses and item choices
-    within a bayesian hierarchical framework as described by Culpepper and
+    within a Bayesian hierarchical framework as described by Culpepper and
     Balamuta (2015) <doi:10.1007/s11336-015-9484-7>. In addition, the package
     contains the datasets used within the analysis of the paper.
 }
@@ -21,11 +21,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} (0000-0003-2826-8458) [copyright holder]
+\strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} (\href{https://orcid.org/0000-0003-2826-8458}{ORCID}) [copyright holder]
 
 Authors:
 \itemize{
-  \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} (0000-0003-4226-6176) [copyright holder]
+  \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} (\href{https://orcid.org/0000-0003-4226-6176}{ORCID}) [copyright holder]
 }
 
 }

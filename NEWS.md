@@ -1,4 +1,4 @@
-# cIRT 1.3.0.900
+# cIRT 1.3.1
 
 ## Changes
 
@@ -54,7 +54,7 @@
 # cIRT 1.0.0
 
 ## Modeling Framework
-- Implementation of the hiercharical framework described in "A Hierarchical Model for Accuracy and Choice on Standardized Tests"
+- Implementation of the hierarchical framework described in "A Hierarchical Model for Accuracy and Choice on Standardized Tests"
 - Specifically, a choice inclusive Probit HLM and a Two Parameter Ogive Model.
 
 ## C++ Functions

@@ -7,7 +7,7 @@
 direct_sum(x)
 }
 \arguments{
-\item{x}{A \code{field<matrix>} or \code{list} containing matrices}
+\item{x}{A \verb{field<matrix>} or \code{list} containing matrices}
 }
 \value{
 Matrix containing the direct sum of all matrices in the list.

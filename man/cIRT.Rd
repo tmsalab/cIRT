@@ -4,8 +4,16 @@
 \alias{cIRT}
 \title{Generic Implementation of Choice IRT MCMC}
 \usage{
-cIRT(subject_ids, fixed_effects, B_elem_plus1, rv_effects, trial_matrix,
-  choices_nk, burnit, chain_length = 10000L)
+cIRT(
+  subject_ids,
+  fixed_effects,
+  B_elem_plus1,
+  rv_effects,
+  trial_matrix,
+  choices_nk,
+  burnit,
+  chain_length = 10000L
+)
 }
 \arguments{
 \item{subject_ids}{A \code{vector} that contains subject IDs for each line of
