@@ -4,9 +4,24 @@
 \alias{TwoPLChoicemcmc}
 \title{Two Parameter Choice IRT Model MCMC}
 \usage{
-TwoPLChoicemcmc(unique_subject_ids, subject_ids, choices_nk, fixed_effects,
-  B, rv_effects_design, gamma, beta, zeta_rv, Sigma_zeta_inv, Y, theta0,
-  a0, b0, mu_xi0, Sig_xi0)
+TwoPLChoicemcmc(
+  unique_subject_ids,
+  subject_ids,
+  choices_nk,
+  fixed_effects,
+  B,
+  rv_effects_design,
+  gamma,
+  beta,
+  zeta_rv,
+  Sigma_zeta_inv,
+  Y,
+  theta0,
+  a0,
+  b0,
+  mu_xi0,
+  Sig_xi0
+)
 }
 \arguments{
 \item{unique_subject_ids}{A \code{vector} with length \eqn{N \times 1}{N x 1}

@@ -4,10 +4,27 @@
 \alias{probitHLM}
 \title{Probit Hierarchial Level Model}
 \usage{
-probitHLM(unique_subject_ids, subject_ids, choices_nk,
-  fixed_effects_design, rv_effects_design, B_elem_plus1, gamma, beta,
-  theta, zeta_rv, WtW, Z_c, Wzeta_0, inv_Sigma_gamma, mu_gamma,
-  Sigma_zeta_inv, S0, mu_beta, sigma_beta_inv)
+probitHLM(
+  unique_subject_ids,
+  subject_ids,
+  choices_nk,
+  fixed_effects_design,
+  rv_effects_design,
+  B_elem_plus1,
+  gamma,
+  beta,
+  theta,
+  zeta_rv,
+  WtW,
+  Z_c,
+  Wzeta_0,
+  inv_Sigma_gamma,
+  mu_gamma,
+  Sigma_zeta_inv,
+  S0,
+  mu_beta,
+  sigma_beta_inv
+)
 }
 \arguments{
 \item{unique_subject_ids}{A \code{vector} with length N x 1 containing
@@ -40,7 +57,7 @@ subject understanding estimates.}
 \item{zeta_rv}{A \code{matrix} with dimensions N x V containing
 random parameter estimates.}
 
-\item{WtW}{A \code{field<matrix>} P x P x N contains the
+\item{WtW}{A \verb{field<matrix>} P x P x N contains the
 caching for direct sum.}
 
 \item{Z_c}{A \code{vector} with dimensions N*K x 1}

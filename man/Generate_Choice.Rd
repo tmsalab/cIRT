@@ -4,8 +4,20 @@
 \alias{Generate_Choice}
 \title{Generate Observed Data from choice model}
 \usage{
-Generate_Choice(N, J, K, theta, as, bs, zeta, gamma, X, W, subject_ids,
-  unique_subject_ids)
+Generate_Choice(
+  N,
+  J,
+  K,
+  theta,
+  as,
+  bs,
+  zeta,
+  gamma,
+  X,
+  W,
+  subject_ids,
+  unique_subject_ids
+)
 }
 \arguments{
 \item{N}{An \code{integer} for the number of observations.}
