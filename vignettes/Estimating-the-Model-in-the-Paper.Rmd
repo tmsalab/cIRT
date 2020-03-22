@@ -17,7 +17,7 @@ each section in the example displayed in `cIRT()` function.
 # Data
 
 Within this vignette, we used two different data sets to generate a Choice
-Item Response Theory Model with the rountine located in `cIRT`.
+Item Response Theory Model with the routine located in `cIRT`.
 
 ```{r load_pkg}
 library(cIRT)

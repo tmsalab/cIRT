@@ -10,11 +10,11 @@ vignette: >
 
 # Intro
 
-The package is a companion to the paper A hierarchical model for accuracy and choice on standardized tests in [Psychometrika](http://link.springer.com/article/10.1007/s11336-015-9484-7) written by Culpepper, S. A. & Balamuta, J. J. Within this package, we make available the code used for the analysis within the paper as well as the data. 
+The package is a companion to the paper "A hierarchical model for accuracy and choice on standardized tests" in [Psychometrika](http://link.springer.com/article/10.1007/s11336-015-9484-7) written by Culpepper, S. A. & Balamuta, J. J. Within this package, we make available the code used for the analysis within the paper as well as the data. 
 
 # Functions
 
-The package provides C++ implementations of the hierarchial bayesian modeling framework for choice. The primary functions that are novel contributions to psychometric literature are the `probitHLM()` and `TwoPLChoicemcmc()` that respectively provide a choice inclusive Probit HLM and a Two Parameter Ogive Model and are called by an overall wrapper function `cIRT()`. These functions do have an overall dependency on other components that have also been coded within C++ and may benefit a practitioner seeking to do use the same functionality elsewhere.
+The package provides C++ implementations of the hierarchical bayesian modeling framework for choice. The primary functions that are novel contributions to psychometric literature are the `probitHLM()` and `TwoPLChoicemcmc()` that respectively provide a choice inclusive Probit HLM and a Two Parameter Ogive Model and are called by an overall wrapper function `cIRT()`. These functions do have an overall dependency on other components that have also been coded within C++ and may benefit a practitioner seeking to do use the same functionality elsewhere.
 
 * Random Number Generation for the following distributions: Wishart `rwishart()`, Inverse Wishart `riwishart()`, and Multivariate Normal `rmvnorm()`.
 * Matrix Centering `center_matrix()`

@@ -130,9 +130,9 @@ TwoPLChoicemcmc <- function(unique_subject_ids, subject_ids, choices_nk, fixed_e
     .Call(`_cIRT_TwoPLChoicemcmc`, unique_subject_ids, subject_ids, choices_nk, fixed_effects, B, rv_effects_design, gamma, beta, zeta_rv, Sigma_zeta_inv, Y, theta0, a0, b0, mu_xi0, Sig_xi0)
 }
 
-#' Probit Hierarchial Level Model
+#' Probit Hierarchical Level Model
 #'
-#' Performs modeling procedure for a Probit Hierarchial Level Model.
+#' Performs modeling procedure for a Probit Hierarchical Level Model.
 #'
 #' @param unique_subject_ids   A `vector` with length N x 1 containing
 #'                             unique subject IDs.

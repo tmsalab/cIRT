@@ -14,7 +14,7 @@ The document addresses the simulation study that was performed to understand whe
 
 # Simulation
 
-The simulation study below is configured to generate results one might obtain from a pool of 1,000 subjects taking a 20 item test. We obtain summarize the results obtained from running the model 100 times over slightly differring $\theta$ and $\eta$. 
+The simulation study below is configured to generate results one might obtain from a pool of 1,000 subjects taking a 20 item test. We obtain summarize the results obtained from running the model 100 times over slightly differing $\theta$ and $\eta$. 
 
 ```{r sim_setup, eval = F}
 ### Variables

@@ -305,9 +305,9 @@ Rcpp::List TwoPLChoicemcmc(/* New Parameters */
                               Rcpp::Named("Wzeta_0", Wzeta_0));
 }
 
-//' Probit Hierarchial Level Model
+//' Probit Hierarchical Level Model
 //'
-//' Performs modeling procedure for a Probit Hierarchial Level Model.
+//' Performs modeling procedure for a Probit Hierarchical Level Model.
 //'
 //' @param unique_subject_ids   A `vector` with length N x 1 containing
 //'                             unique subject IDs.
