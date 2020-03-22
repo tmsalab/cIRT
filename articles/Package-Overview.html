@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">cIRT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0.900</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
       </span>
     </div>
 
@@ -108,12 +108,12 @@
 <div id="intro" class="section level1">
 <h1 class="hasAnchor">
 <a href="#intro" class="anchor"></a>Intro</h1>
-<p>The package is a companion to the paper A hierarchical model for accuracy and choice on standardized tests in <a href="http://link.springer.com/article/10.1007/s11336-015-9484-7">Psychometrika</a> written by Culpepper, S. A. &amp; Balamuta, J. J. Within this package, we make available the code used for the analysis within the paper as well as the data.</p>
+<p>The package is a companion to the paper “A hierarchical model for accuracy and choice on standardized tests” in <a href="http://link.springer.com/article/10.1007/s11336-015-9484-7">Psychometrika</a> written by Culpepper, S. A. &amp; Balamuta, J. J. Within this package, we make available the code used for the analysis within the paper as well as the data.</p>
 </div>
 <div id="functions" class="section level1">
 <h1 class="hasAnchor">
 <a href="#functions" class="anchor"></a>Functions</h1>
-<p>The package provides C++ implementations of the hierarchial bayesian modeling framework for choice. The primary functions that are novel contributions to psychometric literature are the <code><a href="../reference/probitHLM.html">probitHLM()</a></code> and <code><a href="../reference/TwoPLChoicemcmc.html">TwoPLChoicemcmc()</a></code> that respectively provide a choice inclusive Probit HLM and a Two Parameter Ogive Model and are called by an overall wrapper function <code><a href="../reference/cIRT.html">cIRT()</a></code>. These functions do have an overall dependency on other components that have also been coded within C++ and may benefit a practitioner seeking to do use the same functionality elsewhere.</p>
+<p>The package provides C++ implementations of the hierarchical bayesian modeling framework for choice. The primary functions that are novel contributions to psychometric literature are the <code><a href="../reference/probitHLM.html">probitHLM()</a></code> and <code><a href="../reference/TwoPLChoicemcmc.html">TwoPLChoicemcmc()</a></code> that respectively provide a choice inclusive Probit HLM and a Two Parameter Ogive Model and are called by an overall wrapper function <code><a href="../reference/cIRT.html">cIRT()</a></code>. These functions do have an overall dependency on other components that have also been coded within C++ and may benefit a practitioner seeking to do use the same functionality elsewhere.</p>
 <ul>
 <li>Random Number Generation for the following distributions: Wishart <code><a href="../reference/rwishart.html">rwishart()</a></code>, Inverse Wishart <code><a href="../reference/riwishart.html">riwishart()</a></code>, and Multivariate Normal <code><a href="../reference/rmvnorm.html">rmvnorm()</a></code>.</li>
 <li>Matrix Centering <code><a href="../reference/center_matrix.html">center_matrix()</a></code>
