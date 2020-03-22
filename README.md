@@ -5,8 +5,8 @@
 
 <!-- badges: start -->
 
-[![Build
-Status](https://travis-ci.org/tmsalab/cIRT.svg)](https://travis-ci.org/tmsalab/cIRT)
+[![R build
+status](https://github.com/tmsalab/cIRT/workflows/R-CMD-check/badge.svg)](https://github.com/tmsalab/cIRT/actions)
 [![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN Version
 Badge](http://www.r-pkg.org/badges/version/cIRT)](https://cran.r-project.org/package=cIRT)
@@ -16,8 +16,6 @@ Status](https://cranchecks.info/badges/worst/cIRT)](https://cran.r-project.org/w
 Downloads](http://cranlogs.r-pkg.org/badges/cIRT?color=brightgreen)](http://www.r-pkg.org/pkg/cIRT)
 [![RStudio CRAN Mirror’s Total
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/cIRT?color=brightgreen)](http://www.r-pkg.org/pkg/cIRT)
-[![Codecov test
-coverage](https://codecov.io/gh/tmsalab/cIRT/branch/master/graph/badge.svg)](https://codecov.io/gh/tmsalab/cIRT?branch=master)
 <!-- badges: end -->
 
 Jointly model the accuracy of cognitive responses and item choices
@@ -51,7 +49,7 @@ library("cIRT")
 
 Steven Andrew Culpepper and James Joseph Balamuta
 
-## Citing the `cIRT` package
+## Citing the cIRT package
 
 To ensure future development of the package, please cite `cIRT` package
 if used during an analysis or simulation studies. Citation information
