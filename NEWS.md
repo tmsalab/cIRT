@@ -2,12 +2,19 @@
 
 ## Changes
 
-- Added `LazyData: true` to `DESCRIPTION` to match with how the data documentation
-  is called.
+- Added `LazyData: true` to `DESCRIPTION` to match with how the data 
+  documentation is called. 
+  ([#3](https://github.com/tmsalab/cIRT/pull/3))
 
 ## Documentation
 
 - Added a `pkgdown` website that deploys to <https://tmsalab.github.io/cIRT>.
+  ([#3](https://github.com/tmsalab/cIRT/pull/3))
+
+## Deployment
+
+- Switched from Travis-CI to GitHub Actions for R.
+  ([#5](https://github.com/tmsalab/cIRT/pull/5))
 
 # cIRT 1.3.0
 
