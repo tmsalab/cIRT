@@ -5,8 +5,7 @@
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/tmsalab/cIRT/workflows/R-CMD-check/badge.svg)](https://github.com/tmsalab/cIRT/actions)
+[![R-CMD-check](https://github.com/tmsalab/cIRT/workflows/R-CMD-check/badge.svg)](https://github.com/tmsalab/cIRT/actions)
 [![Package-License](https://img.shields.io/badge/license-GPL%20(%3E=2)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN Version
 Badge](https://www.r-pkg.org/badges/version/cIRT)](https://cran.r-project.org/package=cIRT)
