@@ -4,7 +4,8 @@
 \name{trial_matrix}
 \alias{trial_matrix}
 \title{Trial Matrix Data}
-\format{A data frame with 252 observations on the following 30 variables.
+\format{
+A data frame with 252 observations on the following 30 variables.
 \describe{
 \item{\code{t1}}{Subject's Response to Item 1.}
 \item{\code{t2}}{Subject's Response to Item 2.}
@@ -36,7 +37,8 @@
 \item{\code{t28}}{Subject's Response to Item 28.}
 \item{\code{t29}}{Subject's Response to Item 29.}
 \item{\code{t30}}{Subject's Response to Item 30.}
-}}
+}
+}
 \source{
 Choice38 Experiment at UIUC during Spring 2014 - Fall 2014
 }
