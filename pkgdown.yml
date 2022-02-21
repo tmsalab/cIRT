@@ -1,9 +1,9 @@
 pandoc: 2.7.3
-pkgdown: 1.4.1.9000
-pkgdown_sha: 4cb1ae85bb7deeb8810153d55e355f872260995c
+pkgdown: 2.0.2
+pkgdown_sha: ~
 articles:
   Estimating-the-Model-in-the-Paper: Estimating-the-Model-in-the-Paper.html
   Package-Overview: Package-Overview.html
   Simulation-Study-with-cIRT: Simulation-Study-with-cIRT.html
-last_built: 2020-03-22T20:05Z
+last_built: 2022-02-21T21:06Z
 
