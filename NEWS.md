@@ -17,7 +17,7 @@
 
 ## Documentation
 
-- Added a `pkgdown` website that deploys to <https://tmsalab.github.io/cIRT>.
+- Added a `pkgdown` website that deploys to <https://tmsalab.github.io/cIRT/>.
   ([#3](https://github.com/tmsalab/cIRT/pull/3))
 
 ## Deployment
