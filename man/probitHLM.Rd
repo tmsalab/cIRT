@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{probitHLM}
 \alias{probitHLM}
-\title{Probit Hierarchial Level Model}
+\title{Probit Hierarchical Level Model}
 \usage{
 probitHLM(
   unique_subject_ids,
@@ -93,7 +93,7 @@ A \code{list} that contains:
 }
 }
 \description{
-Performs modeling procedure for a Probit Hierarchial Level Model.
+Performs modeling procedure for a Probit Hierarchical Level Model.
 }
 \details{
 The function is implemented to decrease the amount of vectorizations
