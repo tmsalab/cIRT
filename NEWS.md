@@ -1,3 +1,12 @@
+# cIRT 1.3.2
+
+## Changes
+
+- Fix use of `'middle'` argument by using `'given'` in `person()`.
+  ([#8](https://github.com/tmsalab/cIRT/pull/8))
+- Bump requirements to using R 4.0.0 , Rcpp 1.0.8, and RcppArmadillo 10.8.1 or above.
+  ([#8](https://github.com/tmsalab/cIRT/pull/8))
+
 # cIRT 1.3.1
 
 ## Changes
@@ -8,7 +17,7 @@
 
 ## Documentation
 
-- Added a `pkgdown` website that deploys to <https://tmsalab.github.io/cIRT>.
+- Added a `pkgdown` website that deploys to <https://tmsalab.github.io/cIRT/>.
   ([#3](https://github.com/tmsalab/cIRT/pull/3))
 
 ## Deployment
