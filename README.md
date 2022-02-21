@@ -20,7 +20,7 @@ Downloads](https://cranlogs.r-pkg.org/badges/grand-total/cIRT?color=brightgreen)
 
 Jointly model the accuracy of cognitive responses and item choices
 within a Bayesian hierarchical framework as described by Culpepper and
-Balamuta (2015) <doi:10.1007/s11336-015-9484-7>.
+Balamuta (2015).
 
 ## Installation
 
