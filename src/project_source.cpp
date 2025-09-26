@@ -251,10 +251,10 @@ Rcpp::List TwoPLChoicemcmc(/* New Parameters */
         //    arma::mat Sigma_zeta_inv = inv(Sigma_zeta);
 
         // Calulate sigma_itheta ^2 (1 x 1). Note inv() = ()^(-1)
-        double sigma_sq_itheta = arma::conv_to<double>::from(
+        double sigma_sq_itheta = arma::as_scalar(
             1.0 /
             (trans(a0) * a0 + tB * Sigma_zeta_inv * B + 1.0 / sigma2_theta));
-        double mu_itheta = arma::conv_to<double>::from(
+        double mu_itheta = arma::as_scalar(
             sigma_sq_itheta *
             (Z_tilda_yi * a0 + tB * Sigma_zeta_inv * zeta_i.t() +
              mu_theta / sigma2_theta));
@@ -462,7 +462,7 @@ probitHLM(const arma::vec &unique_subject_ids, const arma::vec &subject_ids,
     arma::mat zeta_ast = zeta_1.cols(B_elem_plus1 - 1);
 
     arma::mat sigma_beta_star = inv(
-        Sigma_zeta_inv_ast * arma::conv_to<double>::from(theta.t() * theta) +
+        Sigma_zeta_inv_ast * arma::as_scalar(theta.t() * theta) +
         sigma_beta_inv);
     arma::mat mu_beta_star =
         sigma_beta_star *
