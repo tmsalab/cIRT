@@ -70,6 +70,18 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="1.3.3" id="cirt-133">cIRT 1.3.3<a class="anchor" aria-label="anchor" href="#cirt-133"></a></h2>
+<div class="section level3">
+<h3 id="changes-1-3-3">Changes<a class="anchor" aria-label="anchor" href="#changes-1-3-3"></a></h3>
+<ul><li>Added explicit dependencies on R (&gt;= 4.3.0), Rcpp (&gt;= 1.1.0), and RcppArmadillo (&gt;= 15.0.2-2)</li>
+<li>Removed CXX11 from <code>src/Makevars</code> and <code>src/Makevars.win</code> to avoid potential compilation issues with newer versions of Armadillo through RcppArmadillo.</li>
+<li>Switched README.Rmd to README.qmd to use Quarto for rendering.</li>
+<li>Addressed deprecation warning of <code>"replace conv_to&lt;...&gt;::from(X) with as_scalar(X)"</code> in <code>src/project_source.cpp</code> by using <code>arma::as_scalar(...)</code> instead of <code>conv_to&lt;double&gt;::from(...)</code>.</li>
+<li>Fixed CITATION file to use <code><a href="https://rdrr.io/r/base/c.html" class="external-link">c()</a></code> instead of <code><a href="https://rdrr.io/r/utils/personList.html" class="external-link">personList()</a></code> and <code><a href="https://rdrr.io/r/utils/bibentry.html" class="external-link">bibentry()</a></code> to avoid CRAN check notes.</li>
+<li>Updated GitHub Action workflows.</li>
+</ul></div>
+</div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="1.3.2" id="cirt-132">cIRT 1.3.2<small>2022-02-21</small><a class="anchor" aria-label="anchor" href="#cirt-132"></a></h2>
 <div class="section level3">
 <h3 id="changes-1-3-2">Changes<a class="anchor" aria-label="anchor" href="#changes-1-3-2"></a></h3>
