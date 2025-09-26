@@ -1,6 +1,6 @@
 citHeader("To cite the 'cIRT' R package and methodology in publications use:")
 
-citEntry(entry = "Manual",
+bibentry(bibtype = "Manual",
          title        = "{cIRT: Choice Item Response Theory}",
          author       = personList(as.person("Steven Andrew Culpepper"),
                                    as.person("James Balamuta")
@@ -11,7 +11,7 @@ citEntry(entry = "Manual",
                               "URL https://cran.r-project.org/package=cIRT.")
 )
 
-citEntry(entry = "Article",
+bibentry(bibtype = "Article",
   key          = "2015culpepper",
   title        = "A Hierarchical Model for Accuracy and Choice on Standardized Tests",
   author       = personList(person("Steven Andrew", "Culpepper"), person("James Joseph", "Balamuta")),
