@@ -6,6 +6,7 @@ README\.md
 ^cran-comments\.md$
 ^\.travis\.yml$
 ^README\.Rmd$
+^README\.qmd$
 ^README-.*\.png$
 ^src/\.clang-format$
 ^codecov\.yml$
