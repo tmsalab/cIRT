@@ -7,7 +7,6 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/tmsalab/cIRT/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tmsalab/cIRT/actions/workflows/R-CMD-check.yaml)
-[![Package-License](https://img.shields.io/badge/license-GPL%20(%3E=2)-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 [![CRAN Version
 Badge](https://www.r-pkg.org/badges/version/cIRT.png)](https://cran.r-project.org/package=cIRT)
 [![RStudio CRAN Mirror’s Monthly
