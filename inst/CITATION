@@ -2,7 +2,7 @@ citHeader("To cite the 'cIRT' R package and methodology in publications use:")
 
 bibentry(bibtype = "Manual",
          title        = "{cIRT: Choice Item Response Theory}",
-         author       = personList(as.person("Steven Andrew Culpepper"),
+         author       = c(as.person("Steven Andrew Culpepper"),
                                    as.person("James Balamuta")
                                   ),
          year         = 2015,
@@ -14,7 +14,7 @@ bibentry(bibtype = "Manual",
 bibentry(bibtype = "Article",
   key          = "2015culpepper",
   title        = "A Hierarchical Model for Accuracy and Choice on Standardized Tests",
-  author       = personList(person("Steven Andrew", "Culpepper"), person("James Joseph", "Balamuta")),
+  author       = c(person("Steven Andrew", "Culpepper"), person("James Joseph", "Balamuta")),
   issn         = "0033-3123",
   journal      = "Psychometrika",
   year         = "2015",
