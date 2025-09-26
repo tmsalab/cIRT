@@ -10,8 +10,6 @@
 [![Package-License](https://img.shields.io/badge/license-GPL%20(%3E=2)-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 [![CRAN Version
 Badge](https://www.r-pkg.org/badges/version/cIRT.png)](https://cran.r-project.org/package=cIRT)
-[![CRAN
-Status](https://cranchecks.info/badges/worst/cIRT.png)](https://cran.r-project.org/web/checks/check_results_cIRT.html)
 [![RStudio CRAN Mirror’s Monthly
 Downloads](https://cranlogs.r-pkg.org/badges/cIRT?color=brightgreen.png)](https://www.r-pkg.org/pkg/cIRT)
 [![RStudio CRAN Mirror’s Total
