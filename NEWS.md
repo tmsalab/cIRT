@@ -1,5 +1,10 @@
 # cIRT (development version)
 
+## Changes
+
+- Raised the minimum version of every dependency to its latest CRAN
+  release, including Rcpp (>= 1.1.2) and RcppArmadillo (>= 15.6.2-1).
+
 ## Bug fixes
 
 - `cIRT()` now fills `nC`, `nY` and `Cs` when `burnit = 0`. Previously the
