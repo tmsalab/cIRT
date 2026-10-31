@@ -825,7 +825,7 @@ Rcpp::List cIRT(arma::vec subject_ids, arma::mat fixed_effects,
         all_Sigma_zeta_inv.slice(i) = Sigma_zeta_inv;
 
         // PPPs for Y and C total scores
-        if (i > burnit - 1) {
+        if (i >= burnit) {
             Rcpp::List pppdat = Generate_Choice(
                 N, J, K, theta0, ai0, bi0, zeta_rv, gamma, fixed_effects,
                 rv_effects, subject_ids, unique_subject_ids);
