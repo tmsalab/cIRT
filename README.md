@@ -2,7 +2,7 @@
 
 <!-- README.md is generated from README.qmd. Please edit that file -->
 
-# cIRT: Choice Item Response Theory
+# cIRT: Choice Item Response Theory <a href="https://tmsalab.github.io/cIRT/"><picture><source media="(prefers-color-scheme: dark)" srcset="man/figures/cIRT-logo-animated-dark.svg"><img src="man/figures/cIRT-logo-animated-light.svg" width="150" align="right" alt="A hexagonal logo for cIRT: two cards stand on a solid table with cIRT cut out of it; the 6-point card stays in outline while the chosen 16-point card is lifted off its dashed place, carrying the orange posterior density of θ under a dashed normal prior."/></picture></a>
 
 <!-- badges: start -->
 
