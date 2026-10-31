@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">cIRT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.3.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.3.3.9000</span>
       </span>
     </div>
 
@@ -69,6 +69,22 @@
       <small>Source: <a href="https://github.com/tmsalab/cIRT/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="development version" id="cirt-development-version">cIRT (development version)<a class="anchor" aria-label="anchor" href="#cirt-development-version"></a></h2>
+<div class="section level3">
+<h3 id="changes-development-version">Changes<a class="anchor" aria-label="anchor" href="#changes-development-version"></a></h3>
+<ul><li>Raised the minimum version of every dependency to its latest CRAN release, including Rcpp (&gt;= 1.1.2) and RcppArmadillo (&gt;= 15.6.2-1).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="bug-fixes-development-version">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-development-version"></a></h3>
+<ul><li>
+<code><a href="../reference/cIRT.html">cIRT()</a></code> now fills <code>nC</code>, <code>nY</code> and <code>Cs</code> when <code>burnit = 0</code>. Previously the comparison <code>i &gt; burnit - 1</code> wrapped around on an unsigned integer, so all three were returned as zeros.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="internal-development-version">Internal<a class="anchor" aria-label="anchor" href="#internal-development-version"></a></h3>
+<ul><li>Added a testthat test suite.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.3.3" id="cirt-133">cIRT 1.3.3<small>2025-09-27</small><a class="anchor" aria-label="anchor" href="#cirt-133"></a></h2>
 <div class="section level3">
