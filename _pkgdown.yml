@@ -1,4 +1,10 @@
+url: https://tmsalab.github.io/cIRT/
+
 template:
   params:
     bootswatch: cerulean
     ganalytics: UA-151562227-1
+  opengraph:
+    image:
+      src: man/figures/cIRT-logo-static-light.svg
+      alt: The cIRT hex logo, two item cards worth 6 and 16 points, the chosen one carrying the posterior of θ.
