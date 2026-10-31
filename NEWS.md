@@ -1,3 +1,15 @@
+# cIRT (development version)
+
+## Bug fixes
+
+- `cIRT()` now fills `nC`, `nY` and `Cs` when `burnit = 0`. Previously the
+  comparison `i > burnit - 1` wrapped around on an unsigned integer, so all
+  three were returned as zeros.
+
+## Internal
+
+- Added a testthat test suite.
+
 # cIRT 1.3.3
 
 ## Changes
